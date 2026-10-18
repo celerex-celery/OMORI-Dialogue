@@ -22,8 +22,7 @@ class AudioManager {
     if (this.audioStarted || !this.bgmEl) return;
     this.audioStarted = true;
 
-    const randomBgm = this.bgmList[Math.floor(Math.random() * this.bgmList.length)];
-    this.bgmEl.src = randomBgm;
+    this.bgmEl.src = '../assets/audio/bgm/bs_friend1.ogg';
     this.bgmEl.volume = 0.4;
     this.bgmEl.loop = true;
     this.bgmEl.play().catch(() => {});
