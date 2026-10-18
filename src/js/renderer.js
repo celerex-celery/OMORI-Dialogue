@@ -1,5 +1,6 @@
 let idx = 0;
 let typeInterval = null;
+let autoAdvanceTimer = null;
 
 const bgEl = document.getElementById('bg');
 const portraitImg = document.getElementById('portrait-img');
@@ -28,6 +29,10 @@ function stopTyping() {
   if (typeInterval) {
     clearInterval(typeInterval);
     typeInterval = null;
+  }
+  if (autoAdvanceTimer) {
+    clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = null;
   }
 }
 
@@ -171,9 +176,14 @@ function showDialogue(i) {
     portraitWrap.style.opacity = '0';
     namebox.style.display = 'none';
     emotionEl.style.display = 'none';
+    autoAdvanceTimer = setTimeout(() => {
+      autoAdvanceTimer = null;
+      next();
+    }, 3000);
   } else {
     imageSlideEl.style.display = 'none';
     textEl.style.display = 'block';
+    autoAdvanceTimer = null;
   }
 
   if (d.shake) {
