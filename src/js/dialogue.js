@@ -110,7 +110,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'BASIL',
-    text: "I found something... on the ground...",
+    text: "What is this photo? It wasn't in my photo album...",
     emotion: 'sad',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
