@@ -4,6 +4,7 @@ let frameCount = 0;
 let frameTarget = 0;
 let rafId = null;
 let clams = 0;
+let history = [];
 
 const bgEl = document.getElementById('bg');
 const sceneEl = document.getElementById('scene');
@@ -286,6 +287,11 @@ function showDialogue(i) {
     return;
   }
 
+  if (i !== idx) {
+    history.push(idx);
+    if (history.length > 100) history.shift();
+  }
+
   const d = DIALOGUE[i];
 
   if (d.fade) {
@@ -313,6 +319,8 @@ function next() {
     return;
   }
 
+  history.push(idx);
+  if (history.length > 100) history.shift();
   idx++;
   showDialogue(idx);
 }
@@ -333,12 +341,23 @@ function frameLoop() {
   rafId = requestAnimationFrame(frameLoop);
 }
 
+function prev() {
+  if (history.length === 0) return;
+  stopTyping();
+  idx = history.pop();
+  showDialogue(idx);
+}
+
 function initGame() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       if (choicesEl && choicesEl.children.length > 0) return;
       e.preventDefault();
       next();
+    }
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      prev();
     }
   });
 
