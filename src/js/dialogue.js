@@ -66,7 +66,7 @@ let friendship = 0;
 const DIALOGUE = [
   {
     speaker: 'KEL',
-    text: "Hey BASIL!",
+    text: "Basil! Why is your house shaped like a shoe?",
     emotion: 'happy',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.KEL,
@@ -226,7 +226,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Um... no, i havent seen him.. i think hes just gone on a walk! always remember to stay positive",
+    text: "Um... no, I haven't seen him. I think he's just gone on a walk! Always remember to stay positive.",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
