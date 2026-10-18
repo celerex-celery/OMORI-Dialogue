@@ -110,11 +110,83 @@ const DIALOGUE = [
   },
   {
     speaker: 'BASIL',
+    text: "Well.. I guess you're right.",
+    emotion: 'sad',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BASIL,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "(goes into BASIL's house)",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'BASIL',
+    text: "Hey, wanna see my photo collecti...",
+    emotion: 'sad',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BASIL,
+    friendship: +1
+  },
+  {
+    speaker: 'BASIL',
     text: "What is this photo? It wasn't in my photo album...",
     emotion: 'sad',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
     friendship: +1
+  },
+  {
+    speaker: null,
+    text: "Remember all those memories you had together.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "They're sad now.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "OMORI wakes up in White Space.",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "OMORI talks to MEWO",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'MEWO',
+    text: "MEOW (Theres nothing to do except...)",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "A sharp object falls nearby",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
   },
   {
     speaker: 'BASIL',
@@ -182,7 +254,7 @@ const DIALOGUE = [
   },
   {
     speaker: null,
-    text: "OMORI enters a door.",
+    text: "OMORI enters a white door.",
     emotion: 'neutral',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.BLANK,
@@ -190,7 +262,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "OMORI! You're here! We're going to the picnic.",
+    text: "Oh, OMORI! You're here! We all have been worried sick",
     emotion: 'happy',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.HERO,
@@ -206,7 +278,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'AUBREY',
-    text: "And don't make it weird this time, KEL.",
+    text: "YEAH, We thought you vanished...",
     emotion: 'angry',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.AUBREY,
@@ -332,8 +404,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 31 },
-      { text: "Go back to the picnic", next: 33 }
+      { text: "Go up ladder", next: 40 },
+      { text: "Go back to the picnic", next: 42 }
     ]
   },
   {
@@ -344,7 +416,7 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 32 }
+      { text: "Go up ladder", next: 41 }
     ]
   },
   {
@@ -355,8 +427,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.OMORI,
     friendship: 0,
     choices: [
-      { text: "Go back", next: 33 },
-      { text: "Go up ladder", next: 32 }
+      { text: "Go back", next: 42 },
+      { text: "Go up ladder", next: 41 }
     ]
   },
   {
@@ -447,8 +519,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "YES", next: 44 },
-      { text: "NO", next: 53 }
+      { text: "YES", next: 53 },
+      { text: "NO", next: 62 }
     ]
   },
   {
