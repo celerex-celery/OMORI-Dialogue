@@ -44,6 +44,12 @@ const PORTRAITS = {
     sad: '../assets/images/portraits/BASIL/BASIL SCARED.png',
     angry: '../assets/images/portraits/BASIL/BASIL ANGRY.png'
   },
+  NOSE: {
+    neutral: '../assets/images/portraits/NOSE/NOSE.png',
+    happy: '../assets/images/portraits/NOSE/NOSE.png',
+    sad: '../assets/images/portraits/NOSE/NOSE.png',
+    angry: '../assets/images/portraits/NOSE/NOSE.png'
+  },
   BLANK: null
 };
 
@@ -235,11 +241,7 @@ const DIALOGUE = [
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
-    friendship: -1,
-    choices: [
-      { text: "Stay positive!", next: 237, friendship: +1 },
-      { text: "That's creepy...", next: 239, friendship: -1 }
-    ]
+    friendship: -1
   },
   {
     speaker: 'HERO',
@@ -274,59 +276,43 @@ const DIALOGUE = [
     friendship: 0
   },
   {
-    speaker: null,
-    text: "Mari's smile doesn't flicker.",
-    emotion: 'neutral',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.MARI,
-    friendship: 0
-  },
-  {
-    speaker: 'KEL',
-    text: "Basil? Where did you go?",
-    emotion: 'sad',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.KEL,
-    friendship: 0
-  },
-  {
-    speaker: 'HERO',
-    text: "Maybe he's hiding again.",
-    emotion: 'sad',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.HERO,
-    friendship: 0
-  },
-  {
-    speaker: 'AUBREY',
-    text: "Or maybe he doesn't want us to find him.",
-    emotion: 'angry',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.AUBREY,
-    friendship: 0
-  },
-  {
-    speaker: 'OMORI',
-    text: "...",
-    emotion: 'neutral',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.OMORI,
-    friendship: 0
-  },
-  {
-    speaker: null,
-    text: "Something rustles in the woods behind you.",
-    emotion: 'neutral',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
-  },
-  {
     speaker: 'MARI',
     text: "Don't look! Just stay positive!",
     emotion: 'angry',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
     friendship: -2
+  },
+  {
+    speaker: 'HERO',
+    text: "We should go east to talk to people to see if they saw Basil.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: null,
+    text: "They go east.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "Hey, Nose! Have you seen Basil?",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'NOSE',
+    text: "Nose Goes",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.NOSE,
+    friendship: 0
   }
 ];
