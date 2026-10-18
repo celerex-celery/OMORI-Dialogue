@@ -24,6 +24,17 @@ const choicesEl = document.createElement('div');
 choicesEl.id = 'choices';
 document.getElementById('ui').appendChild(choicesEl);
 
+function coloredText(d) {
+  let t = d.text;
+  if (d.highlight) {
+    const idx = t.indexOf(d.highlight);
+    if (idx !== -1) {
+      t = t.slice(0, idx) + `<span style="color: purple;">${d.highlight}</span>` + t.slice(idx + d.highlight.length);
+    }
+  }
+  return t;
+}
+
 function updateFriendship(change) {
   friendship += change;
   if (friendship < 0) friendship = 0;
@@ -151,16 +162,12 @@ function applyDialogue(d) {
       namebox.style.display = 'none';
     }
 
+    emotionEl.style.display = '';
     emotionEl.className = `emotion-${d.emotion || 'neutral'}`;
     emotionEl.textContent = (d.emotion || 'neutral').toUpperCase();
 
-    if (d.textColor) {
-      textEl.style.color = d.textColor;
-    } else if (d.bg === BG.WHITE_SPACE) {
-      textEl.style.color = '#000000';
-    } else {
-      textEl.style.color = '#fff';
-    }
+    textEl.style.color = d.textColor || '#fff';
+    textEl.style.fontFamily = d.fontFamily ? `'${d.fontFamily}', monospace` : '';
 
     textEl.textContent = '';
     textEl.classList.remove('typewriter');
@@ -172,6 +179,7 @@ function applyDialogue(d) {
     if (d.blackScreen) {
       bgEl.style.background = '#000000';
       bgEl.style.transition = 'none';
+      textEl.style.display = 'block';
       textEl.style.textAlign = 'center';
       textEl.style.position = 'absolute';
       textEl.style.left = '50%';
@@ -192,6 +200,7 @@ function applyDialogue(d) {
       textEl.style.transform = 'none';
       textEl.style.width = '100%';
       textEl.style.margin = '';
+      bgEl.style.transition = 'background 1s ease-in-out';
       document.getElementById('top-bar').style.display = '';
       document.getElementById('text').style.maxHeight = '150px';
       const bgmEl = document.getElementById('bgm');
@@ -201,7 +210,6 @@ function applyDialogue(d) {
     }
 
     if (d.imageSlide) {
-      textEl.style.display = 'none';
       imageSlideEl.style.display = 'block';
       imageSlideEl.style.backgroundImage = `url('${d.imageSlide}')`;
       imageSlideEl.style.backgroundSize = 'contain';
@@ -228,6 +236,12 @@ function applyDialogue(d) {
       textEl.classList.remove('shake-text');
     }
 
+    if (d.argue) {
+      sceneEl.classList.add('argue-flash');
+    } else {
+      sceneEl.classList.remove('argue-flash');
+    }
+
     if (d.friendship !== undefined) {
       updateFriendship(d.friendship);
     }
@@ -240,16 +254,18 @@ function applyDialogue(d) {
 
     if (d.choices) {
       typeText(d.text, () => {
+        if (d.highlight) textEl.innerHTML = coloredText(d);
         continueEl.style.opacity = '0';
         showChoices(d.choices);
       });
     } else if (d.instant) {
-      textEl.textContent = d.text;
+      textEl.innerHTML = d.highlight ? coloredText(d) : d.text;
       textEl.classList.remove('typewriter');
       continueEl.style.opacity = '0.7';
     } else {
       choicesEl.innerHTML = '';
       typeText(d.text, () => {
+        if (d.highlight) textEl.innerHTML = coloredText(d);
         continueEl.style.opacity = '0.7';
       });
     }
@@ -262,8 +278,11 @@ function applyDialogue(d) {
 
 function showDialogue(i) {
   if (i >= DIALOGUE.length) {
-    idx = DIALOGUE.length - 1;
-    showDialogue(idx);
+    endScreen.style.display = 'flex';
+    friendshipFinal.textContent = 'FRIENDSHIP: ' + friendship;
+    endText.textContent = 'Thanks for playing.';
+    continueEl.style.opacity = '0';
+    choicesEl.innerHTML = '';
     return;
   }
 
@@ -282,11 +301,12 @@ function showDialogue(i) {
 }
 
 function next() {
+  if (idx >= DIALOGUE.length) return;
   const d = DIALOGUE[idx];
   stopTyping();
 
   if (textEl.textContent !== d.text) {
-    textEl.textContent = d.text;
+    textEl.innerHTML = d.highlight ? coloredText(d) : d.text;
     textEl.classList.remove('typewriter');
     continueEl.style.opacity = '0.7';
     playTextSfx();
@@ -316,6 +336,7 @@ function frameLoop() {
 function initGame() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
+      if (choicesEl && choicesEl.children.length > 0) return;
       e.preventDefault();
       next();
     }

@@ -11,58 +11,58 @@ const COLORS = {
 
 const PORTRAITS = {
   OMORI: {
-    neutral: '../../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
-    happy: '../../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
-    sad: '../../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
-    angry: '../../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png'
+    neutral: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    happy: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    sad: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    angry: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png'
   },
   MARI: {
-    neutral: '../../assets/images/portraits/MARI/MARI SMILE.png',
-    happy: '../../assets/images/portraits/MARI/MARI BIG SMILE.png',
-    sad: '../../assets/images/portraits/MARI/MARI SMILE.png',
-    angry: '../../assets/images/portraits/MARI/MARI SMIRK.png'
+    neutral: '../assets/images/portraits/MARI/MARI SMILE.png',
+    happy: '../assets/images/portraits/MARI/MARI BIG SMILE.png',
+    sad: '../assets/images/portraits/MARI/MARI SMILE.png',
+    angry: '../assets/images/portraits/MARI/MARI SMIRK.png'
   },
   KEL: {
-    neutral: '../../assets/images/portraits/KEL/KEL SWEAT.png',
-    happy: '../../assets/images/portraits/KEL/KEL DETERMINED.png',
-    sad: '../../assets/images/portraits/KEL/KEL SAD.png',
-    angry: '../../assets/images/portraits/KEL/KEL SUPER ANGRY.png'
+    neutral: '../assets/images/portraits/KEL/KEL SWEAT.png',
+    happy: '../assets/images/portraits/KEL/KEL DETERMINED.png',
+    sad: '../assets/images/portraits/KEL/KEL SAD.png',
+    angry: '../assets/images/portraits/KEL/KEL SUPER ANGRY.png'
   },
   AUBREY: {
-    neutral: '../../assets/images/portraits/AUBREY/AUBREY NEUTRAL.png',
-    happy: '../../assets/images/portraits/AUBREY/AUBREYHAPPY.png',
-    sad: '../../assets/images/portraits/AUBREY/AUBREY SAD.png',
-    angry: '../../assets/images/portraits/AUBREY/AUBREY ANGRY.png'
+    neutral: '../assets/images/portraits/AUBREY/AUBREY NEUTRAL.png',
+    happy: '../assets/images/portraits/AUBREY/AUBREYHAPPY.png',
+    sad: '../assets/images/portraits/AUBREY/AUBREY SAD.png',
+    angry: '../assets/images/portraits/AUBREY/AUBREY ANGRY.png'
   },
   HERO: {
-    neutral: '../../assets/images/portraits/HERO/HERO NEUTRAL.png',
-    happy: '../../assets/images/portraits/HERO/HERO HAPPY.png',
-    sad: '../../assets/images/portraits/HERO/HERO SAD.png',
-    angry: '../../assets/images/portraits/HERO/HERO SURPRISED.png'
+    neutral: '../assets/images/portraits/HERO/HERO NEUTRAL.png',
+    happy: '../assets/images/portraits/HERO/HERO HAPPY.png',
+    sad: '../assets/images/portraits/HERO/HERO SAD.png',
+    angry: '../assets/images/portraits/HERO/HERO SURPRISED.png'
   },
   BASIL: {
-    neutral: '../../assets/images/portraits/BASIL/BASIL SLIGHT SMILE.png',
-    happy: '../../assets/images/portraits/BASIL/BASIL SLIGHT SMILE.png',
-    sad: '../../assets/images/portraits/BASIL/BASIL SCARED.png',
-    angry: '../../assets/images/portraits/BASIL/BASIL ANGRY.png'
+    neutral: '../assets/images/portraits/BASIL/BASIL SLIGHT SMILE.png',
+    happy: '../assets/images/portraits/BASIL/BASIL SLIGHT SMILE.png',
+    sad: '../assets/images/portraits/BASIL/BASIL SCARED.png',
+    angry: '../assets/images/portraits/BASIL/BASIL ANGRY.png'
   },
   NOSE: {
-    neutral: '../../assets/images/portraits/NOSE/NOSE.png',
-    happy: '../../assets/images/portraits/NOSE/NOSE.png',
-    sad: '../../assets/images/portraits/NOSE/NOSE.png',
-    angry: '../../assets/images/portraits/NOSE/NOSE.png'
+    neutral: '../assets/images/portraits/NOSE/NOSE.png',
+    happy: '../assets/images/portraits/NOSE/NOSE.png',
+    sad: '../assets/images/portraits/NOSE/NOSE.png',
+    angry: '../assets/images/portraits/NOSE/NOSE.png'
   },
   SNAKE: {
-    neutral: '../../assets/images/portraits/SNAKE/SNAKE.png',
-    happy: '../../assets/images/portraits/SNAKE/SNAKE.png',
-    sad: '../../assets/images/portraits/SNAKE/SNAKE.png',
-    angry: '../../assets/images/portraits/SNAKE/SNAKE.png'
+    neutral: '../assets/images/portraits/SNAKE/SNAKE.png',
+    happy: '../assets/images/portraits/SNAKE/SNAKE.png',
+    sad: '../assets/images/portraits/SNAKE/SNAKE.png',
+    angry: '../assets/images/portraits/SNAKE/SNAKE.png'
   },
   BERLY: {
-    neutral: '../../assets/images/portraits/BERLY/BERLY.png',
-    happy: '../../assets/images/portraits/BERLY/BERLY.png',
-    sad: '../../assets/images/portraits/BERLY/BERLY.png',
-    angry: '../../assets/images/portraits/BERLY/BERLY.png'
+    neutral: '../assets/images/portraits/BERLY/BERLY.png',
+    happy: '../assets/images/portraits/BERLY/BERLY.png',
+    sad: '../assets/images/portraits/BERLY/BERLY.png',
+    angry: '../assets/images/portraits/BERLY/BERLY.png'
   },
   BLANK: null
 };
@@ -80,15 +80,14 @@ const BG = {
 };
 
 const BGM_LIST = [
-  '../../assets/audio/bgm/pyrefly_forest.ogg',
-  '../../assets/audio/bgm/event_maris_theme.ogg',
-  '../../assets/audio/bgm/bs_friend1.ogg'
+  '../assets/audio/bgm/pyrefly_forest.ogg',
+  '../assets/audio/bgm/event_maris_theme.ogg',
+  '../assets/audio/bgm/bs_friend1.ogg'
 ];
 
-const TEXT_SFX_PATH = '../../assets/audio/se/SYS_text.ogg';
+const TEXT_SFX_PATH = '../assets/audio/se/SYS_text.ogg';
 
 let friendship = 0;
-let clams = 0;
 
 const DIALOGUE = [
   {
@@ -146,7 +145,8 @@ const DIALOGUE = [
     emotion: 'angry',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.AUBREY,
-    friendship: -1
+    friendship: -1,
+    highlight: 'STUFFED TOY'
   },
   {
     speaker: null,
@@ -182,12 +182,12 @@ const DIALOGUE = [
   },
   {
     speaker: 'SNAKE',
-    text: "SSSSSSSsssssss (Heres 200 CLAMS)",
+    text: "SSSSSSSsssssss (Heres 70 CLAMS)",
     emotion: 'neutral',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.SNAKE,
     friendship: 0,
-    clams: +200
+    clams: +70
   },
   {
     speaker: null,
@@ -277,7 +277,8 @@ const DIALOGUE = [
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
     friendship: -2,
-    textColor: 'red'
+    textColor: 'red',
+    fontFamily: 'OMORI-CURSED'
   },
   {
     speaker: null,
@@ -297,7 +298,7 @@ const DIALOGUE = [
     instant: true,
     shake: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/lookatallofus1.png'
+    imageSlide: '../assets/images/memories/lookatallofus1.png'
   },
   {
     speaker: null,
@@ -309,7 +310,7 @@ const DIALOGUE = [
     instant: true,
     shake: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/lookatallofus2.png'
+    imageSlide: '../assets/images/memories/lookatallofus2.png'
   },
   {
     speaker: null,
@@ -320,7 +321,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/lookatalofus3.png'
+    imageSlide: '../assets/images/memories/lookatalofus3.png'
   },
   {
     speaker: null,
@@ -331,7 +332,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/BASILOMORIPHOTO1.png'
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO1.png'
   },
   {
     speaker: null,
@@ -342,7 +343,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/BASILOMORIPHOTO2.png'
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO2.png'
   },
   {
     speaker: null,
@@ -353,7 +354,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/BASILOMORIPHOTO3.png'
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO3.png'
   },
   {
     speaker: null,
@@ -364,7 +365,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER1.png'
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER1.png'
   },
   {
     speaker: null,
@@ -375,7 +376,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER2.png'
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER2.png'
   },
   {
     speaker: null,
@@ -386,7 +387,7 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     blackScreen: true,
-    imageSlide: '../../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER3.png'
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER3.png'
   },
   {
     speaker: null,

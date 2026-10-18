@@ -4,12 +4,21 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'OMORI_GAME2';
+  src: url('../../FONT/OMORI_GAME2.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OMORI-CURSED';
+  src: url('../../FONT/OMORI-CURSED.ttf') format('truetype');
+}
+
 html,
 body {
   height: 100%;
   overflow: hidden;
   background: #0a0a0a;
-  font-family: 'Courier New', monospace;
+  font-family: 'OMORI_GAME2', monospace;
   color: #fff;
 }
 
@@ -100,7 +109,7 @@ body {
 }
 
 #text {
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1.7;
   min-height: 110px;
   max-height: 150px;
