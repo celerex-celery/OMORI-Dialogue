@@ -31,7 +31,7 @@ const achBtn = document.createElement('button');
 achBtn.id = 'ach-btn';
 achBtn.textContent = 'ACHIEVEMENTS: 0/0';
 achBtn.onclick = toggleAchievementMenu;
-achBtn.style.cssText = 'margin-top:8px;padding:10px 16px;background:#2a2a2a;border:3px solid #ffd700;color:#ffd700;font-family:inherit;font-size:14px;font-weight:bold;cursor:pointer;border-radius:6px;min-width:200px;';
+achBtn.style.cssText = 'margin-top:8px;padding:14px 20px;background:#2a2a2a;border:4px solid #ffd700;color:#ffd700;font-family:inherit;font-size:18px;font-weight:bold;cursor:pointer;border-radius:8px;min-width:280px;';
 document.getElementById('top-bar').appendChild(achBtn);
 
 function coloredText(d) {
