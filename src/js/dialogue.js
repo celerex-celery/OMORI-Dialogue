@@ -422,5 +422,77 @@ const DIALOGUE = [
     bg: BG.PICNIC,
     portrait: PORTRAITS.BERLY,
     friendship: 0
+  },
+  {
+    speaker: null,
+    text: "They go to the VAST FOREST.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "Look! A watermelon!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "I broke it.",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -2
+  },
+  {
+    speaker: null,
+    text: "They found a white big bone.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "(That's later on.)",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "They go WEST of the VAST FOREST.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "There's the tetherball!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'HERO',
+    text: "VAN really did swing too hard.",
+    emotion: 'sad',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
   }
 ];

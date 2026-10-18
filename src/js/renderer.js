@@ -75,10 +75,8 @@ function showChoices(choices) {
 
 function showDialogue(i) {
   if (i >= DIALOGUE.length) {
-    endScreen.style.display = 'flex';
-    endTitle.textContent = 'END';
-    friendshipFinal.textContent = 'FINAL FRIENDSHIP: ' + friendship;
-    endText.textContent = 'The picnic is over. Everyone went home. Or somewhere else. Omori stayed silent, as always.';
+    idx = DIALOGUE.length - 1;
+    showDialogue(idx);
     return;
   }
 
