@@ -272,7 +272,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'BASIL',
-    text: "MARI... SHES.... IN.. M......",
+    text: "MARI.... SHES...",
     emotion: 'angry',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
