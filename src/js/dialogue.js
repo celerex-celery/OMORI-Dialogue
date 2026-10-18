@@ -242,6 +242,22 @@ const DIALOGUE = [
     imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER3.png'
   },
   {
+    speaker: 'BASIL',
+    text: "MARI... SHES.... IN.. M......",
+    emotion: 'angry',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BASIL,
+    friendship: -2
+  },
+  {
+    speaker: null,
+    text: "BASIL disappears.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
     speaker: null,
     text: "OMORI wakes up in White Space.",
     emotion: 'neutral',
@@ -268,30 +284,6 @@ const DIALOGUE = [
   {
     speaker: null,
     text: "A sharp object falls nearby",
-    emotion: 'neutral',
-    bg: BG.WHITE_SPACE,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
-  },
-  {
-    speaker: 'BASIL',
-    text: "MARI... SHES.... IN.. M......",
-    emotion: 'angry',
-    bg: BG.SHOE_HOUSE,
-    portrait: PORTRAITS.BASIL,
-    friendship: -2
-  },
-  {
-    speaker: null,
-    text: "BASIL disappears.",
-    emotion: 'neutral',
-    bg: BG.SHOE_HOUSE,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
-  },
-  {
-    speaker: null,
-    text: "OMORI wakes up in White Space.",
     emotion: 'neutral',
     bg: BG.WHITE_SPACE,
     portrait: PORTRAITS.BLANK,
