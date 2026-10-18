@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEADSPACE PICNIC</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="game">
+    <div id="scene">
+      <div id="bg"></div>
+      <div id="portrait"><div id="portrait-img" class="portrait-img"></div></div>
+      <div id="emotion" class="emotion-neutral">NEUTRAL</div>
+      <div id="continue">PRESS ENTER</div>
+    </div>
+    <div id="ui">
+      <div id="top-bar">
+        <div id="namebox" class="namebox">OMORI</div>
+        <div id="friendship">FRIENDSHIP: 0</div>
+      </div>
+      <div id="text"></div>
+    </div>
+    <div id="end-screen">
+      <h1 id="end-title">...?</h1>
+      <div id="friendship-final"></div>
+      <p id="end-text"></p>
+      <button id="restart-btn">RESTART</button>
+    </div>
+  </div>
+
+  <audio id="bgm" loop></audio>
+  <audio id="textSfx"></audio>
+
+  <script src="../js/dialogue.js"></script>
+  <script src="../js/audio.js"></script>
+  <script src="../js/renderer.js"></script>
+  <script>
+    audio.init('bgm', 'textSfx', BGM_LIST, TEXT_SFX_PATH);
+
+    document.addEventListener('click', () => audio.startBGM());
+    document.addEventListener('keydown', () => audio.startBGM());
+
+    initGame();
+  </script>
+</body>
+</html>

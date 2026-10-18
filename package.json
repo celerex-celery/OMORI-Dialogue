@@ -1,0 +1,22 @@
+{
+  "name": "omori-dialogue",
+  "version": "1.0.0",
+  "description": "Omori-style psychological dialogue game",
+  "main": "electron/main.js",
+  "scripts": {
+    "electron": "electron .",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "omori",
+    "dialogue",
+    "psychological",
+    "electron"
+  ],
+  "author": "celerex-celery",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}
