@@ -338,6 +338,17 @@ const DIALOGUE = [
   },
   {
     speaker: null,
+    text: "You go near a pink ladder.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    choices: [
+      { text: "Go up ladder", next: 32 }
+    ]
+  },
+  {
+    speaker: null,
     text: "OMORI is afraid of heights.",
     emotion: 'neutral',
     bg: BG.PICNIC,
@@ -345,7 +356,7 @@ const DIALOGUE = [
     friendship: 0,
     choices: [
       { text: "Go back", next: 30 },
-      { text: "Go up ladder", next: 32 }
+      { text: "Go up ladder", next: 33 }
     ]
   },
   {
