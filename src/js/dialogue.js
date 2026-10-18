@@ -235,7 +235,11 @@ const DIALOGUE = [
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
-    friendship: -1
+    friendship: -1,
+    choices: [
+      { text: "Stay positive!", next: 237, friendship: +1 },
+      { text: "That's creepy...", next: 239, friendship: -1 }
+    ]
   },
   {
     speaker: 'HERO',
@@ -278,10 +282,66 @@ const DIALOGUE = [
     friendship: 0
   },
   {
-    speaker: null,
-    text: "The picnic continues, but Basil is nowhere to be found.",
+    speaker: 'KEL',
+    text: "Basil? Where did you go?",
+    emotion: 'sad',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.KEL,
+    friendship: 0
+  },
+  {
+    speaker: 'HERO',
+    text: "Maybe he's hiding again.",
+    emotion: 'sad',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Or maybe he doesn't want us to find him.",
+    emotion: 'angry',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
     emotion: 'neutral',
     bg: BG.PICNIC,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Something rustles in the woods behind you.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Don't look! Just stay positive!",
+    emotion: 'angry',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
+    friendship: -2
+  },
+  {
+    speaker: null,
+    text: "The sky turns white.",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "The picnic is gone.",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
     portrait: PORTRAITS.BLANK,
     friendship: 0
   }
