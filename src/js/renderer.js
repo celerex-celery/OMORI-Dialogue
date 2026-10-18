@@ -5,6 +5,8 @@ let frameTarget = 0;
 let rafId = null;
 let clams = 0;
 let history = [];
+let visitedRewards = new Set();
+let achievements = new Set();
 
 const bgEl = document.getElementById('bg');
 const sceneEl = document.getElementById('scene');
@@ -24,6 +26,13 @@ const restartBtn = document.getElementById('restart-btn');
 const choicesEl = document.createElement('div');
 choicesEl.id = 'choices';
 document.getElementById('ui').appendChild(choicesEl);
+
+const achBtn = document.createElement('button');
+achBtn.id = 'ach-btn';
+achBtn.textContent = 'ACHIEVEMENTS: 0/0';
+achBtn.onclick = toggleAchievementMenu;
+achBtn.style.cssText = 'margin-top:8px;padding:6px 12px;background:#2a2a2a;border:2px solid #ffd700;color:#ffd700;font-family:inherit;font-size:12px;cursor:pointer;border-radius:4px;';
+document.getElementById('top-bar').appendChild(achBtn);
 
 function coloredText(d) {
   let t = d.text;
@@ -46,6 +55,91 @@ function updateClams(change) {
   clams += change;
   if (clams < 0) clams = 0;
   clamsEl.textContent = 'CLAMS: ' + clams;
+  checkAchievements();
+}
+
+const ACHIEVEMENTS = [
+  { id: 'first_steps', name: 'First Steps', desc: 'View your first dialogue line', hidden: false },
+  { id: 'snake_friend', name: 'Snake Charmer', desc: 'Receive 70 clams from Snake', hidden: false },
+  { id: 'stuffed_toy', name: 'Lost & Found', desc: 'Help Aubrey find her stuffed toy', hidden: false },
+  { id: 'basil_photo', name: 'A Thousand Words', desc: 'See Basil\'s mysterious photo', hidden: true },
+  { id: 'white_space', name: 'Blank Canvas', desc: 'Wake up in White Space', hidden: false },
+  { id: 'self_harm', name: 'Knife to Meet You', desc: 'Stab yourself in White Space', hidden: true },
+  { id: 'reunion', name: 'The Gang\'s All Here', desc: 'Reunite with Hero, Kel, and Aubrey', hidden: false },
+  { id: 'picnic', name: 'Perfect Picnic', desc: 'Reach the picnic with Mari', hidden: true },
+  { id: 'tetherball', name: 'Ball Game', desc: 'Find the lost tetherball', hidden: true },
+  { id: 'berly_gift', name: 'Generous Berly', desc: 'Receive 40 clams from Berly', hidden: true },
+  { id: 'flower_crown', name: 'Crown of Thorns', desc: 'Receive Basil\'s flower crown', hidden: true },
+  { id: 'max_friendship', name: 'Best Friends Forever', desc: 'Reach 50 friendship', hidden: false },
+  { id: 'rich', name: 'Clam Hoarder', desc: 'Accumulate 500 clams', hidden: false },
+  { id: 'backtracker', name: 'Second Thoughts', desc: 'Use Backspace to revisit a line', hidden: false },
+  { id: 'completionist', name: 'True Ending', desc: 'Reach the end of the story', hidden: true },
+];
+
+function loadAchievements() {
+  try {
+    const saved = localStorage.getItem('omori_achievements');
+    if (saved) {
+      const arr = JSON.parse(saved);
+      achievements = new Set(arr);
+      updateAchievementUI();
+    }
+  } catch (e) {}
+}
+
+function saveAchievements() {
+  try {
+    localStorage.setItem('omori_achievements', JSON.stringify([...achievements]));
+  } catch (e) {}
+}
+
+function unlockAchievement(id) {
+  if (!achievements.has(id)) {
+    achievements.add(id);
+    saveAchievements();
+    updateAchievementUI();
+    showAchievementToast(id);
+  }
+}
+
+function showAchievementToast(id) {
+  const ach = ACHIEVEMENTS.find(a => a.id === id);
+  if (!ach) return;
+  const toast = document.createElement('div');
+  toast.className = 'achievement-toast';
+  toast.innerHTML = `<strong>ACHIEVEMENT UNLOCKED</strong><br>${ach.name}<br><small>${ach.desc}</small>`;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 50);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 500);
+  }, 4000);
+}
+
+function updateAchievementUI() {
+  const btn = document.getElementById('ach-btn');
+  if (btn) btn.textContent = `ACHIEVEMENTS: ${achievements.size}/${ACHIEVEMENTS.length}`;
+}
+
+function checkAchievements() {
+  if (friendship >= 50) unlockAchievement('max_friendship');
+  if (clams >= 500) unlockAchievement('rich');
+  if (idx >= DIALOGUE.length - 1) unlockAchievement('completionist');
+}
+
+function toggleAchievementMenu() {
+  let menu = document.getElementById('ach-menu');
+  if (menu) { menu.remove(); return; }
+  menu = document.createElement('div');
+  menu.id = 'ach-menu';
+  menu.innerHTML = '<h3>ACHIEVEMENTS</h3>' + ACHIEVEMENTS.map(a => {
+    const unlocked = achievements.has(a.id);
+    return `<div class="ach-item ${unlocked ? 'unlocked' : 'locked'}">
+      <span class="ach-name">${unlocked ? a.name : '???'}</span>
+      <span class="ach-desc">${unlocked ? a.desc : (a.hidden ? '???' : a.desc)}</span>
+    </div>`;
+  }).join('') + '<button onclick="toggleAchievementMenu()">CLOSE</button>';
+  document.body.appendChild(menu);
 }
 
 function stopTyping() {
@@ -119,7 +213,7 @@ function frameLoop() {
   rafId = requestAnimationFrame(frameLoop);
 }
 
-function applyDialogue(d) {
+function applyDialogue(d, dialogueIdx = idx) {
   try {
     bgEl.style.background = d.bg || BG.FOREST;
 
@@ -243,15 +337,30 @@ function applyDialogue(d) {
       sceneEl.classList.remove('argue-flash');
     }
 
-    if (d.friendship !== undefined) {
-      updateFriendship(d.friendship);
+    if (!visitedRewards.has(dialogueIdx)) {
+      if (d.friendship !== undefined) {
+        updateFriendship(d.friendship);
+      }
+
+      if (d.clams !== undefined) {
+        updateClams(d.clams);
+      }
+      visitedRewards.add(dialogueIdx);
     }
 
-    if (d.clams !== undefined) {
-      updateClams(d.clams);
-    }
-
-    playTextSfx();
+    // Achievement triggers
+    if (dialogueIdx === 0) unlockAchievement('first_steps');
+    if (dialogueIdx === 14) unlockAchievement('snake_friend'); // Snake gives 70 clams
+    if (dialogueIdx === 6) unlockAchievement('stuffed_toy'); // Aubrey stuffed toy
+    if (dialogueIdx >= 20 && dialogueIdx <= 28) unlockAchievement('basil_photo'); // Memory slides
+    if (dialogueIdx === 3) unlockAchievement('white_space'); // First White Space
+    if (dialogueIdx === 35) unlockAchievement('self_harm'); // Stab self
+    if (dialogueIdx === 39) unlockAchievement('reunion'); // Meet Hero/Kel/Aubrey
+    if (dialogueIdx === 55) unlockAchievement('picnic'); // Reach picnic
+    if (dialogueIdx === 840) unlockAchievement('tetherball'); // Find tetherball
+    if (dialogueIdx === 842) unlockAchievement('berly_gift'); // Berly gives 40 clams
+    if (dialogueIdx === 895) unlockAchievement('flower_crown'); // Receive flower crown
+    checkAchievements();
 
     if (d.choices) {
       typeText(d.text, () => {
@@ -298,12 +407,12 @@ function showDialogue(i) {
     sceneEl.classList.add('scene-fade-out');
     setTimeout(() => {
       sceneEl.classList.remove('scene-fade-out');
-      applyDialogue(d);
+      applyDialogue(d, i);
     }, 1000);
     return;
   }
 
-  applyDialogue(d);
+  applyDialogue(d, i);
 }
 
 function next() {
@@ -343,12 +452,14 @@ function frameLoop() {
 
 function prev() {
   if (history.length === 0) return;
+  unlockAchievement('backtracker');
   stopTyping();
   idx = history.pop();
   showDialogue(idx);
 }
 
 function initGame() {
+  loadAchievements();
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       if (choicesEl && choicesEl.children.length > 0) return;
@@ -370,6 +481,8 @@ function initGame() {
     idx = 0;
     friendship = 0;
     clams = 0;
+    visitedRewards.clear();
+    history.length = 0;
     endScreen.style.display = 'none';
     showDialogue(0);
   });

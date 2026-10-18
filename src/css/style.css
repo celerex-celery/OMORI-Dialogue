@@ -365,3 +365,92 @@ button.choice:disabled {
   border-color: #555;
   color: #888;
 }
+
+.achievement-toast {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background: #1a1a1a;
+  border: 3px solid #ffd700;
+  color: #ffd700;
+  padding: 16px 24px;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(255,215,0,0.4);
+  z-index: 100;
+  opacity: 0;
+  transform: translateX(120%);
+  transition: all 0.4s ease;
+  max-width: 300px;
+  line-height: 1.5;
+}
+.achievement-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.achievement-toast strong { color: #fff; font-size: 12px; letter-spacing: 1px; }
+.achievement-toast small { opacity: 0.8; }
+
+#ach-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111;
+  border: 3px solid #ffd700;
+  padding: 24px;
+  z-index: 100;
+  min-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.9);
+}
+#ach-menu h3 {
+  color: #ffd700;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.ach-item {
+  padding: 10px 12px;
+  margin: 6px 0;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.ach-item.unlocked {
+  border-color: #ffd700;
+  background: #1a1a0a;
+}
+.ach-item.locked {
+  opacity: 0.5;
+}
+.ach-name {
+  display: block;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 4px;
+}
+.ach-desc {
+  font-size: 13px;
+  color: #aaa;
+}
+#ach-menu button {
+  display: block;
+  margin: 16px auto 0;
+  padding: 10px 24px;
+  background: #2a2a2a;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+#ach-menu button:hover {
+  background: #ffd700;
+  color: #000;
+}
