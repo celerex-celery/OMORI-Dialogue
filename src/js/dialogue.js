@@ -816,5 +816,78 @@ const DIALOGUE = [
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.OMORI,
     friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Wait, another watermelon!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: +1
+  },
+  {
+    speaker: null,
+    text: "AUBREY smashes the watermelon.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    argue: true
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Another one bites the dust!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Watermelon juice splatters all over AUBREY.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "HAHAHA! AUBREY you're covered in juice!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: +2
+  },
+  {
+    speaker: 'AUBREY',
+    text: "It's not funny, Kel!",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "It totally is!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'HERO',
+    text: "Guys, we should keep moving.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
   }
 ];
