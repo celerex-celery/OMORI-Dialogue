@@ -332,8 +332,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 44 },
-      { text: "Go back to the picnic", next: 45 }
+      { text: "Go up ladder", next: 31 },
+      { text: "Go back to the picnic", next: 60 }
     ]
   },
   {
@@ -344,8 +344,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.OMORI,
     friendship: 0,
     choices: [
-      { text: "Go back", next: 43 },
-      { text: "Go up ladder", next: 44 }
+      { text: "Go back", next: 30 },
+      { text: "Go up ladder", next: 32 }
     ]
   },
   {
