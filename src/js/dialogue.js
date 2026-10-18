@@ -433,19 +433,48 @@ const DIALOGUE = [
   },
   {
     speaker: 'KEL',
-    text: "Look! A watermelon!",
+    text: "WOAH A WATERMELON",
     emotion: 'happy',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.KEL,
     friendship: +1
   },
   {
+    speaker: null,
+    text: "Should AUBREY break it?",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    choices: [
+      { text: "YES", next: 44 },
+      { text: "NO", next: 47 }
+    ]
+  },
+  {
     speaker: 'AUBREY',
-    text: "I broke it.",
+    text: "IM GONNA BREAK THE WATERMELON",
     emotion: 'angry',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.AUBREY,
+    friendship: -3,
+    argue: true
+  },
+  {
+    speaker: null,
+    text: "AUBREY breaks the watermelon. Juice splatters all over KEL's face.",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
     friendship: -2
+  },
+  {
+    speaker: 'KEL',
+    text: "AUBREY!",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
   },
   {
     speaker: null,
