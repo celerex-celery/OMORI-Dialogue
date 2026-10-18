@@ -578,7 +578,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'AUBREY',
-    text: "Wait. What about BASIL?",
+    text: "Wait... what about BASIL?",
     emotion: 'angry',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.AUBREY,
@@ -590,27 +590,35 @@ const DIALOGUE = [
     emotion: 'angry',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.AUBREY,
-    friendship: 0
+    friendship: -1
   },
   {
     speaker: 'BERLY',
-    text: "I woke up at 3:33AM. I heard shouting. Screaming. Really loud.",
+    text: "I... I woke up at 3:33 AM.",
     emotion: 'sad',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.BERLY,
-    friendship: 0
+    friendship: -1
   },
   {
     speaker: 'BERLY',
-    text: "I went outside... and there was a flower crown on my doorstep.",
+    text: "I heard shouting. Screaming. Really loud.",
     emotion: 'sad',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.BERLY,
-    friendship: 0
+    friendship: -1
+  },
+  {
+    speaker: 'BERLY',
+    text: "When I went outside... there was a flower crown on my doorstep.",
+    emotion: 'sad',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BERLY,
+    friendship: -1
   },
   {
     speaker: null,
-    text: "BERLY gives the flower crown to KEL.",
+    text: "BERLY places the flower crown gently into KEL's hands.",
     emotion: 'neutral',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.BLANK,
@@ -618,7 +626,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "OH NO... THAT IS BASILS FLOWER CROWN......",
+    text: "Oh no... that's BASIL's flower crown...",
     emotion: 'sad',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.HERO,
@@ -626,7 +634,7 @@ const DIALOGUE = [
   },
   {
     speaker: null,
-    text: "There is slight blood on it.",
+    text: "There's blood on it.",
     emotion: 'neutral',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.BLANK,
@@ -638,15 +646,15 @@ const DIALOGUE = [
     emotion: 'sad',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.KEL,
-    friendship: -1
+    friendship: -2
   },
   {
     speaker: 'HERO',
-    text: "We need to find him.",
-    emotion: 'sad',
+    text: "We have to find him.",
+    emotion: 'angry',
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.HERO,
-    friendship: +1
+    friendship: 0
   },
   {
     speaker: 'OMORI',
