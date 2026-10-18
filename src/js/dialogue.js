@@ -141,6 +141,22 @@ const DIALOGUE = [
     friendship: +1
   },
   {
+    speaker: 'BASIL',
+    text: "MARI... SHES.... IN.. M......",
+    emotion: 'angry',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BASIL,
+    friendship: -2
+  },
+  {
+    speaker: null,
+    text: "BASIL disappears.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
     speaker: null,
     text: "Remember all those memories you had together.",
     emotion: 'neutral',
@@ -240,22 +256,6 @@ const DIALOGUE = [
     instant: true,
     blackScreen: true,
     imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER3.png'
-  },
-  {
-    speaker: 'BASIL',
-    text: "MARI... SHES.... IN.. M......",
-    emotion: 'angry',
-    bg: BG.SHOE_HOUSE,
-    portrait: PORTRAITS.BASIL,
-    friendship: -2
-  },
-  {
-    speaker: null,
-    text: "BASIL disappears.",
-    emotion: 'neutral',
-    bg: BG.SHOE_HOUSE,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
   },
   {
     speaker: null,
