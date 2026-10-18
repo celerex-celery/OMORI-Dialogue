@@ -125,6 +125,8 @@ function showDialogue(i) {
   void textEl.offsetWidth;
   textEl.classList.add('typewriter');
 
+  const imageSlideEl = document.getElementById('image-slide');
+
   if (d.blackScreen) {
     bgEl.style.background = '#000000';
     bgEl.style.transition = 'none';
@@ -157,6 +159,21 @@ function showDialogue(i) {
     if (bgmEl.src && bgmEl.paused) {
       bgmEl.play().catch(() => {});
     }
+  }
+
+  if (d.imageSlide) {
+    textEl.style.display = 'none';
+    imageSlideEl.style.display = 'block';
+    imageSlideEl.style.backgroundImage = `url('${d.imageSlide}')`;
+    imageSlideEl.style.backgroundSize = 'contain';
+    imageSlideEl.style.backgroundPosition = 'center';
+    imageSlideEl.style.backgroundRepeat = 'no-repeat';
+    portraitWrap.style.opacity = '0';
+    namebox.style.display = 'none';
+    emotionEl.style.display = 'none';
+  } else {
+    imageSlideEl.style.display = 'none';
+    textEl.style.display = 'block';
   }
 
   if (d.shake) {

@@ -149,7 +149,8 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     shake: true,
-    blackScreen: true
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/lookatallofus1.png'
   },
   {
     speaker: null,
@@ -160,7 +161,85 @@ const DIALOGUE = [
     friendship: 0,
     instant: true,
     shake: true,
-    blackScreen: true
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/lookatallofus2.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/lookatalofus3.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO1.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO2.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/BASILOMORIPHOTO3.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER1.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER2.png'
+  },
+  {
+    speaker: null,
+    text: "",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    blackScreen: true,
+    imageSlide: '../assets/images/memories/THESEAREALLOFTHEMEMORIESTOGETHER3.png'
   },
   {
     speaker: null,
