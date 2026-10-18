@@ -8,12 +8,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "omori",
-    "dialogue",
-    "psychological",
-    "electron"
-  ],
+  "keywords": ["omori", "dialogue", "psychological", "electron"],
   "author": "celerex-celery",
   "license": "MIT",
   "devDependencies": {
