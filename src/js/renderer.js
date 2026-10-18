@@ -14,6 +14,9 @@ const endTitle = document.getElementById('end-title');
 const friendshipFinal = document.getElementById('friendship-final');
 const endText = document.getElementById('end-text');
 const restartBtn = document.getElementById('restart-btn');
+const choicesEl = document.createElement('div');
+choicesEl.id = 'choices';
+document.getElementById('ui').appendChild(choicesEl);
 
 function updateFriendship(change) {
   friendship += change;
@@ -49,6 +52,25 @@ function typeText(text, callback) {
       if (callback) callback();
     }
   }, 35);
+}
+
+function showChoices(choices) {
+  choicesEl.innerHTML = '';
+  continueEl.style.opacity = '0';
+  choices.forEach((c) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => {
+      choicesEl.innerHTML = '';
+      if (c.friendship !== undefined) {
+        updateFriendship(c.friendship);
+      }
+      idx = c.next;
+      showDialogue(idx);
+    });
+    choicesEl.appendChild(btn);
+  });
 }
 
 function showDialogue(i) {
@@ -105,17 +127,20 @@ function showDialogue(i) {
   void textEl.offsetWidth;
   textEl.classList.add('typewriter');
 
-  continueEl.style.opacity = '0';
-
   if (d.friendship !== undefined) {
     updateFriendship(d.friendship);
   }
 
   playTextSfx();
 
-  typeText(d.text, () => {
-    continueEl.style.opacity = '0.7';
-  });
+  if (d.choices) {
+    showChoices(d.choices);
+  } else {
+    choicesEl.innerHTML = '';
+    typeText(d.text, () => {
+      continueEl.style.opacity = '0.7';
+    });
+  }
 }
 
 function next() {

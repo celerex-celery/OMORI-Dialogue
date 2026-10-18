@@ -4,7 +4,9 @@ const COLORS = {
   KEL: '#4fc3f7',
   AUBREY: '#ff80ab',
   HERO: '#ffb74d',
-  BASIL: '#aed581'
+  BASIL: '#aed581',
+  NOSE: '#ffffff',
+  BERLY: '#ff69b4'
 };
 
 const PORTRAITS = {
@@ -50,6 +52,12 @@ const PORTRAITS = {
     sad: '../assets/images/portraits/NOSE/NOSE.png',
     angry: '../assets/images/portraits/NOSE/NOSE.png'
   },
+  BERLY: {
+    neutral: '../assets/images/portraits/BERLY/BERLY.png',
+    happy: '../assets/images/portraits/BERLY/BERLY.png',
+    sad: '../assets/images/portraits/BERLY/BERLY.png',
+    angry: '../assets/images/portraits/BERLY/BERLY.png'
+  },
   BLANK: null
 };
 
@@ -61,7 +69,8 @@ const BG = {
   SHOE_HOUSE: 'linear-gradient(#8b4513 0%, #5d2e1c 100%)',
   WHITE_SPACE: 'radial-gradient(circle at center, #ffffff 0%, #e0e0e0 40%, #c0c0c0 100%)',
   FARAWAY_TOWN: 'linear-gradient(#4a6fa5 0%, #2c3e50 100%)',
-  PICNIC: 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)'
+  PICNIC: 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)',
+  VAST_FOREST: 'linear-gradient(#1a2e1a 0%, #0d1a0d 100%)'
 };
 
 const BGM_LIST = [
@@ -313,6 +322,94 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.PICNIC,
     portrait: PORTRAITS.NOSE,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "You see a ladder going up.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    choices: [
+      { text: "Go up ladder", next: 44 },
+      { text: "Go back to the picnic", next: 45 }
+    ]
+  },
+  {
+    speaker: null,
+    text: "OMORI is afraid of heights.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0,
+    choices: [
+      { text: "Go back", next: 43 },
+      { text: "Go up ladder", next: 44 }
+    ]
+  },
+  {
+    speaker: 'BERLY',
+    text: "VANNN WHY DID YOU DO THAT!!!!",
+    emotion: 'angry',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
+    friendship: -1
+  },
+  {
+    speaker: 'BERLY',
+    text: "Oh, hey!!!",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
+    friendship: +1
+  },
+  {
+    speaker: 'BERLY',
+    text: "VAN here used his arms and swung too hard, and now the ball's gone far off somewhere... Dumb VAN...",
+    emotion: 'sad',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Oh, I saw the tetherball going SOUTH into the VAST FOREST.",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
+  },
+  {
+    speaker: 'BERLY',
+    text: "Into the VAST FOREST? Ugh... We'll never find it now. It might as well be lost forever!",
+    emotion: 'sad',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
+    friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "Oh we can go there!",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'BERLY',
+    text: "Heh. You sure you want to do that? VAST FOREST is a pretty dangerous place, y'know?",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
+    friendship: 0
+  },
+  {
+    speaker: 'BERLY',
+    text: "One time, I even got into a super grizzly brawl with this ugly plant creature with dead, empty eyes and a gaping mouth.",
+    emotion: 'angry',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.BERLY,
     friendship: 0
   }
 ];
