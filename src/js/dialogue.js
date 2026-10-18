@@ -9,10 +9,10 @@ const COLORS = {
 
 const PORTRAITS = {
   OMORI: {
-    neutral: '../assets/images/portraits/OMORI/OMORI MENU.png',
-    happy: '../assets/images/portraits/OMORI/OMORI MENU.png',
-    sad: '../assets/images/portraits/OMORI/OMORI BATTLE.png',
-    angry: '../assets/images/portraits/OMORI/OMORI BATTLE.png'
+    neutral: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    happy: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    sad: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png',
+    angry: '../assets/images/portraits/OMORI/OMORI ALWAYS NEUTRAL.png'
   },
   MARI: {
     neutral: '../assets/images/portraits/MARI/MARI SMILE.png',
