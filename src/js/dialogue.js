@@ -328,21 +328,5 @@ const DIALOGUE = [
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
     friendship: -2
-  },
-  {
-    speaker: null,
-    text: "The sky turns white.",
-    emotion: 'neutral',
-    bg: BG.WHITE_SPACE,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
-  },
-  {
-    speaker: null,
-    text: "The picnic is gone.",
-    emotion: 'neutral',
-    bg: BG.WHITE_SPACE,
-    portrait: PORTRAITS.BLANK,
-    friendship: 0
   }
 ];
