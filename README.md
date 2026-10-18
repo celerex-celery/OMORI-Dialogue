@@ -21,6 +21,13 @@ npm run electron
 - **Enter** — advance dialogue
 - **Click** / any key — start audio
 
+## Story
+
+1. **Basil's Shoe House** — Kel calls out to Basil, who says something unexpected, finds a photo, whispers "MARI... SHES.... IN.. M......" then disappears.
+2. **White Space** — Omori wakes up, finds a knife, stabs himself, wakes again.
+3. **Faraway Town** — Omori enters a door and finds HERO, KEL, and AUBREY heading to the picnic.
+4. **Picnic** — The group sees Mari and asks if she's seen Basil.
+
 ## Features
 
 - Omori-style dialogue with character portraits
