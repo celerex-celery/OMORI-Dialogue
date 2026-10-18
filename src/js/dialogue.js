@@ -845,6 +845,15 @@ const DIALOGUE = [
     friendship: +1
   },
   {
+    speaker: 'BERLY',
+    text: "Oh! You found it! Thanks! Here, take this!",
+    emotion: 'happy',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BERLY,
+    friendship: +1,
+    clams: +40
+  },
+  {
     speaker: 'HERO',
     text: "VAN really did swing too hard.",
     emotion: 'sad',
