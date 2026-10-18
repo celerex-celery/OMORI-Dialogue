@@ -343,7 +343,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "Oh, OMORI! You're here! We all have been worried sick",
+    text: "Oh, OMORI! You're here! We all have been worried sick!",
     emotion: 'happy',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.HERO,

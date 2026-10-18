@@ -299,6 +299,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
+  z-index: 20;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
 }
 
 button.choice {
@@ -313,10 +317,13 @@ button.choice {
   border-radius: 6px;
   text-align: center;
   min-width: 180px;
-  z-index: 10;
+  z-index: 20;
   position: relative;
   transition: all 0.15s;
   box-shadow: 0 4px 0 #1a1a1a;
+  white-space: nowrap;
+  visibility: visible;
+  opacity: 1;
 }
 
 button.choice:hover {
