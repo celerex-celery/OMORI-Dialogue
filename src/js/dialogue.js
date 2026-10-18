@@ -85,6 +85,30 @@ let friendship = 0;
 
 const DIALOGUE = [
   {
+    speaker: null,
+    text: "Something feels wrong. But you can't remember what.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "Hey, Basil said he had something important to show us. Something about... a photo?",
+    emotion: 'happy',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.KEL,
+    friendship: +2
+  },
+  {
+    speaker: 'BASIL',
+    text: "H-Hi guys!",
+    emotion: 'happy',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BASIL,
+    friendship: +3
+  },
+  {
     speaker: 'KEL',
     text: "BASIL! Why is your house shaped like a shoe?",
     emotion: 'happy',
@@ -485,8 +509,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 47 },
-      { text: "Go back to the picnic", next: 49 }
+      { text: "Go up ladder", next: 50 },
+      { text: "Go back to the picnic", next: 52 }
     ]
   },
   {
@@ -497,7 +521,7 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 48 }
+      { text: "Go up ladder", next: 51 },
     ]
   },
   {
@@ -508,8 +532,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.OMORI,
     friendship: 0,
     choices: [
-      { text: "Go back", next: 49 },
-      { text: "Go up ladder", next: 48 }
+      { text: "Go back", next: 52 },
+      { text: "Go up ladder", next: 51 }
     ]
   },
   {
