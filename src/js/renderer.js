@@ -138,6 +138,10 @@ function showDialogue(i) {
     portraitWrap.style.opacity = '0';
     namebox.style.display = 'none';
     emotionEl.style.display = 'none';
+    document.getElementById('top-bar').style.display = 'none';
+    document.getElementById('text').style.maxHeight = 'none';
+    const bgmEl = document.getElementById('bgm');
+    bgmEl.pause();
   } else {
     textEl.style.textAlign = 'left';
     textEl.style.position = 'static';
@@ -147,6 +151,12 @@ function showDialogue(i) {
     portraitWrap.style.opacity = d.portrait ? '1' : '0';
     namebox.style.display = d.speaker ? 'inline-block' : 'none';
     emotionEl.style.display = '';
+    document.getElementById('top-bar').style.display = '';
+    document.getElementById('text').style.maxHeight = '150px';
+    const bgmEl = document.getElementById('bgm');
+    if (bgmEl.src && bgmEl.paused) {
+      bgmEl.play().catch(() => {});
+    }
   }
 
   if (d.shake) {
