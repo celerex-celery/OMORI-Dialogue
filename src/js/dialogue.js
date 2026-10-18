@@ -802,6 +802,14 @@ const DIALOGUE = [
     friendship: 0
   },
   {
+    speaker: null,
+    text: "You got FLOWER CROWN",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
     speaker: 'HERO',
     text: "Oh no... that's BASIL's flower crown...",
     emotion: 'sad',
