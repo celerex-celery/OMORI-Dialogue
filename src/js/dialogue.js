@@ -611,7 +611,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "We should go east to talk to people to see if they saw BASIL.",
+    text: "The lake sounds like a good place to start. Let's go check it out.",
     emotion: 'neutral',
     bg: BG.PICNIC,
     portrait: PORTRAITS.HERO,
@@ -619,19 +619,222 @@ const DIALOGUE = [
   },
   {
     speaker: null,
-    text: "They go east.",
+    text: "The group walks toward the lake, the afternoon sun filtering through the trees.",
     emotion: 'neutral',
     bg: BG.PICNIC,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    fade: true
+  },
+  {
+    speaker: null,
+    text: "The lake comes into view - calm water reflecting the sky, lily pads dotting the surface.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
     portrait: PORTRAITS.BLANK,
     friendship: 0
   },
   {
     speaker: 'KEL',
-    text: "Hey, NOSE! Have you seen BASIL?",
+    text: "WOAH! Look at all those lily pads! They're everywhere!",
     emotion: 'happy',
-    bg: BG.PICNIC,
+    bg: BG.LAKE,
     portrait: PORTRAITS.KEL,
     friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "It's... actually really pretty. Basil would love this.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: 'HERO',
+    text: "Spread out. Check near the water's edge, the dock, the boathouse. Basil's small, he could be anywhere.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "The group splits up. You walk along the shoreline, the mud squelching under your shoes.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Ahead, an old wooden dock extends into the water. A small rowboat is tied to it.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Over here! I found something!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: +1
+  },
+  {
+    speaker: null,
+    text: "You rush over. Aubrey is crouched by the dock, holding a damp camera strap.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "Is that... Basil's camera?",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.KEL,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Yeah. It's wet. Like someone dropped it in the water recently.",
+    emotion: 'sad',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'HERO',
+    text: "That means he was here recently. He couldn't have gone far.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Unless... someone took him from here.",
+    emotion: 'angry',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "What? Who would do that?",
+    emotion: 'sad',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "A chill runs down your spine. You know exactly what happened. But you can't tell them.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0,
+    shake: true
+  },
+  {
+    speaker: 'MARI',
+    text: "Oh my! What are you all doing by the water? You'll catch a cold!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
+  },
+  {
+    speaker: 'KEL',
+    text: "MARI! When did you get here?",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'MARI',
+    text: "I followed you! Picnic food gets cold fast, so I brought a basket down. Here, have some sandwiches!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: +2
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Mari... did you see Basil? His camera is here. Wet.",
+    emotion: 'sad',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'MARI',
+    text: "Oh dear... a wet camera? That's not good for photos at all. But I'm sure he's fine! He probably just went to dry it off.",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "Yeah! He's probably at the boathouse or something!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: null,
+    text: "Mari hands out sandwiches. The group eats in uneasy silence. You stare at the camera strap in Aubrey's hand.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true
+  },
+  {
+    speaker: 'HERO',
+    text: "We should check the boathouse. And the trail that goes around the lake.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "I'll stay here with the picnic! Just in case Basil comes back hungry!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Right. Let's split up. Omori, you come with me to the boathouse. Kel, Hero, take the trail.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
   },
   {
     speaker: 'NOSE',
