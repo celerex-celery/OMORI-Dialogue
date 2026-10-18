@@ -448,7 +448,7 @@ const DIALOGUE = [
     friendship: 0,
     choices: [
       { text: "YES", next: 44 },
-      { text: "NO", next: 47 }
+      { text: "NO", next: 53 }
     ]
   },
   {
@@ -475,6 +475,58 @@ const DIALOGUE = [
     bg: BG.VAST_FOREST,
     portrait: PORTRAITS.KEL,
     friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "WHAT IS WRONG WITH YOU!",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: -2,
+    argue: true
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Well you shouldn't have been standing right next to it, Kel. It's not my fault you got juice on your face.",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -2,
+    argue: true
+  },
+  {
+    speaker: 'KEL',
+    text: "IT WAS A WATERMELON! YOU DIDN'T HAVE TO SMASH IT!",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.KEL,
+    friendship: -2,
+    argue: true
+  },
+  {
+    speaker: 'AUBREY',
+    text: "It was just a watermelon. Calm down.",
+    emotion: 'angry',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1,
+    argue: true
+  },
+  {
+    speaker: 'HERO',
+    text: "Guys... please stop.",
+    emotion: 'sad',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.VAST_FOREST,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
   },
   {
     speaker: null,
