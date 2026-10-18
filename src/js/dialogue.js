@@ -788,6 +788,15 @@ const DIALOGUE = [
     shake: true
   },
   {
+    speaker: null,
+    text: "Footsteps on the grass behind you. Light. Deliberate. You all turn.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true
+  },
+  {
     speaker: 'MARI',
     text: "Oh my! What are you all doing by the water? You'll catch a cold!",
     emotion: 'happy',
@@ -862,11 +871,111 @@ const DIALOGUE = [
   },
   {
     speaker: 'AUBREY',
-    text: "Right. Let's split up. Omori, you come with me to the boathouse. Kel, Hero, take the trail.",
+    text: "Your sandwich is... really good, Mari. As always.",
     emotion: 'neutral',
     bg: BG.LAKE,
     portrait: PORTRAITS.AUBREY,
     friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Oh, thank you, Aubrey! I added a little honey to the ham this time. Thought it might be a nice surprise.",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
+  },
+  {
+    speaker: 'KEL',
+    text: "You remember that? From years ago?",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.KEL,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Of course! I remember everyone's favorites. Kel - extra pickles. Hero - no crusts. Aubrey - honey ham. Basil - turkey, no crusts. And Omori...",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
+  },
+  {
+    speaker: 'MARI',
+    text: "Omori, you always just ate whatever was given to you. Never complained. Such a good listener.",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: 0
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Her eyes linger on you a moment too long. The smile doesn't waver.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true,
+    shake: true
+  },
+  {
+    speaker: 'AUBREY',
+    text: "We should go. The boathouse first.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Be careful near the water! The dock gets slippery. And don't stay out too late - it gets cold fast!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: 0
+  },
+  {
+    speaker: 'HERO',
+    text: "We will. Stay safe, Mari.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.HERO,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Always! Now go on, before the sandwiches get cold!",
+    emotion: 'happy',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.MARI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "The group splits up. Aubrey grabs your arm, pulling you toward the boathouse. Mari waves, picnic basket in hand, watching until you're out of sight.",
+    emotion: 'neutral',
+    bg: BG.LAKE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    instant: true
+  },
+  {
+    speaker: null,
+    text: "The boathouse looms ahead - weathered wood, peeling paint, a single window dark as an eye.",
+    emotion: 'neutral',
+    bg: BG.BOATHOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    fade: true
   },
   {
     speaker: 'NOSE',
