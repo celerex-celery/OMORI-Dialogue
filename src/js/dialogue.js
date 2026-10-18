@@ -226,26 +226,34 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Basil? I haven't seen him since... the photo.",
-    emotion: 'sad',
+    text: "Um... no, i havent seen him.. i think hes just gone on a walk! always remember to stay positive",
+    emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
-    friendship: +1
+    friendship: -1
   },
   {
     speaker: 'HERO',
-    text: "What photo?",
-    emotion: 'neutral',
-    bg: BG.PICNIC,
-    portrait: PORTRAITS.HERO,
-    friendship: 0
-  },
-  {
-    speaker: 'MARI',
-    text: "Never mind. It doesn't matter.",
+    text: "Stay positive...",
     emotion: 'sad',
     bg: BG.PICNIC,
-    portrait: PORTRAITS.MARI,
+    portrait: PORTRAITS.HERO,
+    friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "See! Mari knows! Basil's just on a walk!",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "She sounds creepy when she says that.",
+    emotion: 'angry',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.AUBREY,
     friendship: -1
   },
   {
@@ -254,6 +262,14 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.PICNIC,
     portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Mari's smile doesn't flicker.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
     friendship: 0
   },
   {
