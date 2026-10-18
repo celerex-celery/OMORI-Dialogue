@@ -19,3 +19,4 @@ npm run electron
 - Kel and Aubrey arguing
 - Friendship point tracker
 - Random BGM on each launch
+- Text beep SFX per letter
