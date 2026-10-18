@@ -5,6 +5,7 @@ class AudioManager {
     this.audioStarted = false;
     this.bgmList = [];
     this.textSfxPath = '';
+    this.currentBGM = null;
   }
 
   init(bgmElId, textSfxElId, bgmList, textSfxPath) {
@@ -22,7 +23,20 @@ class AudioManager {
     if (this.audioStarted || !this.bgmEl) return;
     this.audioStarted = true;
 
-    this.bgmEl.src = '../assets/audio/bgm/bs_friend1.ogg';
+    this.playBGM('forest');
+  }
+
+  playBGM(type) {
+    if (!this.bgmEl) return;
+    let src;
+    if (type === 'white') {
+      src = '../assets/audio/bgm/white_space.ogg';
+    } else {
+      src = '../assets/audio/bgm/bs_friend1.ogg';
+    }
+    if (this.currentBGM === src) return;
+    this.currentBGM = src;
+    this.bgmEl.src = src;
     this.bgmEl.volume = 0.4;
     this.bgmEl.loop = true;
     this.bgmEl.play().catch(() => {});

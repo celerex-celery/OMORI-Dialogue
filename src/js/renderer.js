@@ -98,6 +98,12 @@ function showDialogue(i) {
     setTimeout(() => bgEl.classList.remove('argue-flash'), 400);
   }
 
+  if (d.bg === BG.WHITE_SPACE) {
+    audio.playBGM('white');
+  } else {
+    audio.playBGM('forest');
+  }
+
   portraitWrap.style.opacity = d.portrait ? '1' : '0';
 
   let imgSrc = null;
