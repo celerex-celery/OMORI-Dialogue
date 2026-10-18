@@ -193,9 +193,16 @@ function applyDialogue(d) {
     portraitWrap.style.opacity = '0';
     namebox.style.display = 'none';
     emotionEl.style.display = 'none';
+    frameCount = 0;
+    frameTarget = 120;
+    if (!rafId) {
+      rafId = requestAnimationFrame(frameLoop);
+    }
   } else {
     imageSlideEl.style.display = 'none';
     textEl.style.display = 'block';
+    frameCount = 0;
+    frameTarget = 0;
   }
 
   if (d.shake) {
@@ -262,6 +269,22 @@ function next() {
 
   idx++;
   showDialogue(idx);
+}
+
+function frameLoop() {
+  if (frameTarget <= 0) {
+    rafId = null;
+    return;
+  }
+  frameCount++;
+  if (frameCount >= frameTarget) {
+    frameCount = 0;
+    frameTarget = 0;
+    rafId = null;
+    next();
+    return;
+  }
+  rafId = requestAnimationFrame(frameLoop);
 }
 
 function initGame() {
