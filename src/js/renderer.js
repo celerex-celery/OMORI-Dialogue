@@ -104,6 +104,8 @@ function applyDialogue(d) {
 
   if (d.bg === BG.WHITE_SPACE) {
     audio.playBGM('white');
+  } else if (d.speaker === 'MARI' || d.bg === BG.PICNIC) {
+    audio.playBGM('maris', d.speaker);
   } else {
     audio.playBGM('forest');
   }

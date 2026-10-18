@@ -26,11 +26,13 @@ class AudioManager {
     this.playBGM('forest');
   }
 
-  playBGM(type) {
+  playBGM(type, speaker) {
     if (!this.bgmEl) return;
     let src;
     if (type === 'white') {
       src = '../assets/audio/bgm/white_space.ogg';
+    } else if (type === 'maris' || speaker === 'MARI') {
+      src = '../assets/audio/bgm/event_maris_theme.ogg';
     } else {
       src = '../assets/audio/bgm/bs_friend1.ogg';
     }

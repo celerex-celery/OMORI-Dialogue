@@ -399,7 +399,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Um... no, I haven't seen him. I think he's just gone on a walk! Always remember to stay positive.",
+    text: "Um... no, I haven't seen him... I think he's just gone on a walk! Always remember to stay positive.",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
@@ -407,7 +407,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "Stay positive...",
+    text: "Oh, I just wish we can find him...",
     emotion: 'sad',
     bg: BG.PICNIC,
     portrait: PORTRAITS.HERO,
