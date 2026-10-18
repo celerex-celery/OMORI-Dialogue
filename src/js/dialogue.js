@@ -563,11 +563,11 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Um... no, I haven't seen him... I think he's just gone on a walk! Always remember to stay positive.",
+    text: "Oh! Basil? He mentioned something about going to the lake earlier. He said he wanted to take some photos of the water lilies. You know how he gets when he's focused on his album!",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
-    friendship: -1
+    friendship: +1
   },
   {
     speaker: 'HERO',
@@ -579,7 +579,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'KEL',
-    text: "See! MARI knows! BASIL's just on a walk!",
+    text: "The lake? That makes sense! He loves taking pictures there!",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.KEL,
@@ -587,11 +587,11 @@ const DIALOGUE = [
   },
   {
     speaker: 'AUBREY',
-    text: "She sounds creepy when she says that.",
-    emotion: 'angry',
+    text: "Oh... the lake. Yeah, that sounds like something he'd do.",
+    emotion: 'neutral',
     bg: BG.PICNIC,
     portrait: PORTRAITS.AUBREY,
-    friendship: -1
+    friendship: 0
   },
   {
     speaker: 'OMORI',
@@ -603,11 +603,11 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Don't look! Just stay positive!",
-    emotion: 'angry',
+    text: "Oh, you guys should check by the lake! I saw some pretty water lilies blooming there this morning. Perfect for photos!",
+    emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
-    friendship: -2
+    friendship: +1
   },
   {
     speaker: 'HERO',
