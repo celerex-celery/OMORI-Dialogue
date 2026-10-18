@@ -281,16 +281,49 @@ const DIALOGUE = [
     fontFamily: 'OMORI-CURSED'
   },
   {
-    speaker: null,
-    text: "BASIL disappears.",
+    speaker: 'OMORI',
+    text: "...",
     emotion: 'neutral',
     bg: BG.SHOE_HOUSE,
-    portrait: PORTRAITS.BLANK,
+    portrait: PORTRAITS.OMORI,
     friendship: 0
   },
   {
     speaker: null,
-    text: "Remember all those memories you had together.",
+    text: "Omori grabs Basil and drags him into the darkness.",
+    emotion: 'neutral',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.BLANK,
+    friendship: -3,
+    shake: true
+  },
+  {
+    speaker: 'KEL',
+    text: "B-BASIL?! WHERE DID HE GO?!",
+    emotion: 'angry',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "HE WAS RIGHT HERE! DID YOU SEE THAT?!",
+    emotion: 'angry',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'HERO',
+    text: "He just... vanished? That's impossible.",
+    emotion: 'sad',
+    bg: BG.SHOE_HOUSE,
+    portrait: PORTRAITS.HERO,
+    friendship: -1
+  },
+  {
+    speaker: null,
+    text: "Basil is gone. No trace. No sound. Just... gone.",
     emotion: 'neutral',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BLANK,
