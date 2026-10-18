@@ -97,8 +97,7 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.WHITE_SPACE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0,
-    fade: true
+    friendship: 0
   },
   {
     speaker: null,

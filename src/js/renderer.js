@@ -108,143 +108,155 @@ function frameLoop() {
 }
 
 function applyDialogue(d) {
-  bgEl.style.background = d.bg || BG.FOREST;
+  try {
+    bgEl.style.background = d.bg || BG.FOREST;
 
-  if (d.bg === BG.WHITE_SPACE) {
-    audio.playBGM('white');
-  } else if (d.speaker === 'MARI' || d.bg === BG.PICNIC) {
-    audio.playBGM('maris', d.speaker);
-  } else {
-    audio.playBGM('forest');
-  }
-
-  portraitWrap.style.opacity = d.portrait ? '1' : '0';
-
-  let imgSrc = null;
-  if (d.speaker && PORTRAITS[d.speaker]) {
-    const char = PORTRAITS[d.speaker];
-    imgSrc = char[d.emotion] || char.neutral || null;
-  } else if (d.portrait && PORTRAITS[d.portrait]) {
-    imgSrc = PORTRAITS[d.portrait];
-  }
-
-  if (imgSrc) {
-    portraitImg.style.backgroundImage = `url('${imgSrc}')`;
-    portraitImg.style.backgroundSize = 'cover';
-    portraitImg.style.backgroundPosition = 'center';
-    portraitImg.style.backgroundRepeat = 'no-repeat';
-  } else {
-    portraitImg.style.backgroundImage = 'none';
-  }
-
-  if (d.speaker) {
-    namebox.textContent = d.speaker;
-    namebox.style.color = COLORS[d.speaker] || '#fff';
-    namebox.style.borderColor = COLORS[d.speaker] || '#444';
-    namebox.style.display = 'inline-block';
-  } else {
-    namebox.style.display = 'none';
-  }
-
-  emotionEl.className = `emotion-${d.emotion || 'neutral'}`;
-  emotionEl.textContent = (d.emotion || 'neutral').toUpperCase();
-
-  if (d.textColor) {
-    textEl.style.color = d.textColor;
-  } else {
-    textEl.style.color = '#fff';
-  }
-
-  textEl.textContent = '';
-  textEl.classList.remove('typewriter');
-  void textEl.offsetWidth;
-  textEl.classList.add('typewriter');
-
-  const imageSlideEl = document.getElementById('image-slide');
-
-  if (d.blackScreen) {
-    bgEl.style.background = '#000000';
-    bgEl.style.transition = 'none';
-    textEl.style.textAlign = 'center';
-    textEl.style.position = 'absolute';
-    textEl.style.left = '50%';
-    textEl.style.top = '50%';
-    textEl.style.transform = 'translate(-50%, -50%)';
-    textEl.style.width = 'auto';
-    textEl.style.margin = '0';
-    portraitWrap.style.opacity = '0';
-    namebox.style.display = 'none';
-    emotionEl.style.display = 'none';
-    document.getElementById('top-bar').style.display = 'none';
-    document.getElementById('text').style.maxHeight = 'none';
-    const bgmEl = document.getElementById('bgm');
-    bgmEl.pause();
-  } else {
-    textEl.style.textAlign = 'left';
-    textEl.style.position = 'static';
-    textEl.style.transform = 'none';
-    textEl.style.width = '100%';
-    textEl.style.margin = '';
-    document.getElementById('top-bar').style.display = '';
-    document.getElementById('text').style.maxHeight = '150px';
-    const bgmEl = document.getElementById('bgm');
-    if (bgmEl.src && bgmEl.paused) {
-      bgmEl.play().catch(() => {});
+    if (d.bg === BG.WHITE_SPACE) {
+      audio.playBGM('white');
+    } else if (d.speaker === 'MARI' || d.bg === BG.PICNIC) {
+      audio.playBGM('maris', d.speaker);
+    } else {
+      audio.playBGM('forest');
     }
+  } catch (e) {
+    console.error('Audio error:', e);
   }
 
-  if (d.imageSlide) {
-    textEl.style.display = 'none';
-    imageSlideEl.style.display = 'block';
-    imageSlideEl.style.backgroundImage = `url('${d.imageSlide}')`;
-    imageSlideEl.style.backgroundSize = 'contain';
-    imageSlideEl.style.backgroundPosition = 'center';
-    imageSlideEl.style.backgroundRepeat = 'no-repeat';
-    portraitWrap.style.opacity = '0';
-    namebox.style.display = 'none';
-    emotionEl.style.display = 'none';
-    frameCount = 0;
-    frameTarget = 120;
-    if (!rafId) {
-      rafId = requestAnimationFrame(frameLoop);
+  try {
+    portraitWrap.style.opacity = d.portrait ? '1' : '0';
+
+    let imgSrc = null;
+    if (d.speaker && PORTRAITS[d.speaker]) {
+      const char = PORTRAITS[d.speaker];
+      imgSrc = char[d.emotion] || char.neutral || null;
+    } else if (d.portrait && PORTRAITS[d.portrait]) {
+      imgSrc = PORTRAITS[d.portrait];
     }
-  } else {
-    imageSlideEl.style.display = 'none';
-    textEl.style.display = 'block';
-    frameCount = 0;
-    frameTarget = 0;
-  }
 
-  if (d.shake) {
-    textEl.classList.add('shake-text');
-  } else {
-    textEl.classList.remove('shake-text');
-  }
+    if (imgSrc) {
+      portraitImg.style.backgroundImage = `url('${imgSrc}')`;
+      portraitImg.style.backgroundSize = 'cover';
+      portraitImg.style.backgroundPosition = 'center';
+      portraitImg.style.backgroundRepeat = 'no-repeat';
+    } else {
+      portraitImg.style.backgroundImage = 'none';
+    }
 
-  if (d.friendship !== undefined) {
-    updateFriendship(d.friendship);
-  }
+    if (d.speaker) {
+      namebox.textContent = d.speaker;
+      namebox.style.color = COLORS[d.speaker] || '#fff';
+      namebox.style.borderColor = COLORS[d.speaker] || '#444';
+      namebox.style.display = 'inline-block';
+    } else {
+      namebox.style.display = 'none';
+    }
 
-  if (d.clams !== undefined) {
-    updateClams(d.clams);
-  }
+    emotionEl.className = `emotion-${d.emotion || 'neutral'}`;
+    emotionEl.textContent = (d.emotion || 'neutral').toUpperCase();
 
-  playTextSfx();
+    if (d.textColor) {
+      textEl.style.color = d.textColor;
+    } else if (d.bg === BG.WHITE_SPACE) {
+      textEl.style.color = '#000000';
+    } else {
+      textEl.style.color = '#fff';
+    }
 
-  if (d.choices) {
-    typeText(d.text, () => {
-      continueEl.style.opacity = '0';
-      showChoices(d.choices);
-    });
-  } else if (d.instant) {
-    textEl.textContent = d.text;
+    textEl.textContent = '';
     textEl.classList.remove('typewriter');
-    continueEl.style.opacity = '0.7';
-  } else {
-    choicesEl.innerHTML = '';
-    typeText(d.text, () => {
+    void textEl.offsetWidth;
+    textEl.classList.add('typewriter');
+
+    const imageSlideEl = document.getElementById('image-slide');
+
+    if (d.blackScreen) {
+      bgEl.style.background = '#000000';
+      bgEl.style.transition = 'none';
+      textEl.style.textAlign = 'center';
+      textEl.style.position = 'absolute';
+      textEl.style.left = '50%';
+      textEl.style.top = '50%';
+      textEl.style.transform = 'translate(-50%, -50%)';
+      textEl.style.width = 'auto';
+      textEl.style.margin = '0';
+      portraitWrap.style.opacity = '0';
+      namebox.style.display = 'none';
+      emotionEl.style.display = 'none';
+      document.getElementById('top-bar').style.display = 'none';
+      document.getElementById('text').style.maxHeight = 'none';
+      const bgmEl = document.getElementById('bgm');
+      bgmEl.pause();
+    } else {
+      textEl.style.textAlign = 'left';
+      textEl.style.position = 'static';
+      textEl.style.transform = 'none';
+      textEl.style.width = '100%';
+      textEl.style.margin = '';
+      document.getElementById('top-bar').style.display = '';
+      document.getElementById('text').style.maxHeight = '150px';
+      const bgmEl = document.getElementById('bgm');
+      if (bgmEl.src && bgmEl.paused) {
+        bgmEl.play().catch(() => {});
+      }
+    }
+
+    if (d.imageSlide) {
+      textEl.style.display = 'none';
+      imageSlideEl.style.display = 'block';
+      imageSlideEl.style.backgroundImage = `url('${d.imageSlide}')`;
+      imageSlideEl.style.backgroundSize = 'contain';
+      imageSlideEl.style.backgroundPosition = 'center';
+      imageSlideEl.style.backgroundRepeat = 'no-repeat';
+      portraitWrap.style.opacity = '0';
+      namebox.style.display = 'none';
+      emotionEl.style.display = 'none';
+      frameCount = 0;
+      frameTarget = 120;
+      if (!rafId) {
+        rafId = requestAnimationFrame(frameLoop);
+      }
+    } else {
+      imageSlideEl.style.display = 'none';
+      textEl.style.display = 'block';
+      frameCount = 0;
+      frameTarget = 0;
+    }
+
+    if (d.shake) {
+      textEl.classList.add('shake-text');
+    } else {
+      textEl.classList.remove('shake-text');
+    }
+
+    if (d.friendship !== undefined) {
+      updateFriendship(d.friendship);
+    }
+
+    if (d.clams !== undefined) {
+      updateClams(d.clams);
+    }
+
+    playTextSfx();
+
+    if (d.choices) {
+      typeText(d.text, () => {
+        continueEl.style.opacity = '0';
+        showChoices(d.choices);
+      });
+    } else if (d.instant) {
+      textEl.textContent = d.text;
+      textEl.classList.remove('typewriter');
       continueEl.style.opacity = '0.7';
-    });
+    } else {
+      choicesEl.innerHTML = '';
+      typeText(d.text, () => {
+        continueEl.style.opacity = '0.7';
+      });
+    }
+  } catch (e) {
+    textEl.textContent = 'ERROR: ' + e.message;
+    textEl.style.color = '#ff0000';
+    console.error('Renderer error:', e);
   }
 }
 
@@ -324,3 +336,12 @@ function initGame() {
 
   showDialogue(0);
 }
+
+window.onerror = function (msg, url, line, col, error) {
+  if (textEl) {
+    textEl.textContent = 'JS ERROR: ' + (msg || 'unknown');
+    textEl.style.color = '#ff0000';
+  }
+  console.error('Uncaught error:', msg, error);
+  return true;
+};
