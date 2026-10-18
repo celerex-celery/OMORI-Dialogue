@@ -189,6 +189,16 @@ body {
   display: none !important;
 }
 
+.shake-text {
+  animation: shakeText 0.5s ease-in-out infinite;
+}
+
+@keyframes shakeText {
+  0%, 100% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-52%, -48%); }
+  75% { transform: translate(-48%, -52%); }
+}
+
 .typewriter {
   border-right: 3px solid #fff;
   animation: blinkCursor 1s infinite;

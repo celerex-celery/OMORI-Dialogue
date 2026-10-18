@@ -146,7 +146,10 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    instant: true,
+    shake: true,
+    blackScreen: true
   },
   {
     speaker: null,
@@ -154,7 +157,10 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    instant: true,
+    shake: true,
+    blackScreen: true
   },
   {
     speaker: null,

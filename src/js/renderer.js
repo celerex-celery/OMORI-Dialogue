@@ -125,6 +125,36 @@ function showDialogue(i) {
   void textEl.offsetWidth;
   textEl.classList.add('typewriter');
 
+  if (d.blackScreen) {
+    bgEl.style.background = '#000000';
+    bgEl.style.transition = 'none';
+    textEl.style.textAlign = 'center';
+    textEl.style.position = 'absolute';
+    textEl.style.left = '50%';
+    textEl.style.top = '50%';
+    textEl.style.transform = 'translate(-50%, -50%)';
+    textEl.style.width = 'auto';
+    textEl.style.margin = '0';
+    portraitWrap.style.opacity = '0';
+    namebox.style.display = 'none';
+    emotionEl.style.display = 'none';
+  } else {
+    textEl.style.textAlign = 'left';
+    textEl.style.position = 'static';
+    textEl.style.transform = 'none';
+    textEl.style.width = '100%';
+    textEl.style.margin = '';
+    portraitWrap.style.opacity = d.portrait ? '1' : '0';
+    namebox.style.display = d.speaker ? 'inline-block' : 'none';
+    emotionEl.style.display = '';
+  }
+
+  if (d.shake) {
+    textEl.classList.add('shake-text');
+  } else {
+    textEl.classList.remove('shake-text');
+  }
+
   if (d.friendship !== undefined) {
     updateFriendship(d.friendship);
   }
@@ -136,6 +166,10 @@ function showDialogue(i) {
       continueEl.style.opacity = '0';
       showChoices(d.choices);
     });
+  } else if (d.instant) {
+    textEl.textContent = d.text;
+    textEl.classList.remove('typewriter');
+    continueEl.style.opacity = '0.7';
   } else {
     choicesEl.innerHTML = '';
     typeText(d.text, () => {
