@@ -563,7 +563,23 @@ const DIALOGUE = [
   },
   {
     speaker: 'MARI',
-    text: "Oh! Basil? He mentioned something about going to the lake earlier. He said he wanted to take some photos of the water lilies. You know how he gets when he's focused on his album!",
+    text: "Oh my, Basil? Let me think... He was here earlier, helping me set out the blanket. He said something about the light being perfect for photos today.",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "What time was that? He wasn't there when we arrived.",
+    emotion: 'neutral',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.AUBREY,
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Hmm, maybe an hour ago? He ran off saying something about 'catching the morning light on the water.' You know Basil - once he gets an idea for a photo, nothing stops him!",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.MARI,
@@ -571,15 +587,23 @@ const DIALOGUE = [
   },
   {
     speaker: 'HERO',
-    text: "Oh, I just wish we can find him...",
-    emotion: 'sad',
+    text: "That does sound like him. But he'd usually tell us if he was leaving...",
+    emotion: 'neutral',
     bg: BG.PICNIC,
     portrait: PORTRAITS.HERO,
-    friendship: -1
+    friendship: 0
+  },
+  {
+    speaker: 'MARI',
+    text: "Oh, I'm sure he just got distracted! He probably found a really interesting bug or a weird rock. He'll turn up when he's hungry - I made his favorite sandwiches!",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
   },
   {
     speaker: 'KEL',
-    text: "The lake? That makes sense! He loves taking pictures there!",
+    text: "Your sandwiches are the best, Mari! He'll definitely come back for those!",
     emotion: 'happy',
     bg: BG.PICNIC,
     portrait: PORTRAITS.KEL,
@@ -587,11 +611,19 @@ const DIALOGUE = [
   },
   {
     speaker: 'AUBREY',
-    text: "Oh... the lake. Yeah, that sounds like something he'd do.",
-    emotion: 'neutral',
+    text: "...Yeah. His favorite. Turkey and lettuce, crusts cut off.",
+    emotion: 'sad',
     bg: BG.PICNIC,
     portrait: PORTRAITS.AUBREY,
-    friendship: 0
+    friendship: -1
+  },
+  {
+    speaker: 'MARI',
+    text: "Exactly! So don't worry, okay? He'll turn up. Now, who's hungry? I have potato salad too!",
+    emotion: 'happy',
+    bg: BG.PICNIC,
+    portrait: PORTRAITS.MARI,
+    friendship: +1
   },
   {
     speaker: 'OMORI',
