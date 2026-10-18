@@ -5,6 +5,7 @@ let frameTarget = 0;
 let rafId = null;
 
 const bgEl = document.getElementById('bg');
+const sceneEl = document.getElementById('scene');
 const portraitImg = document.getElementById('portrait-img');
 const portraitWrap = document.getElementById('portrait');
 const namebox = document.getElementById('namebox');
@@ -82,21 +83,24 @@ function showChoices(choices) {
   });
 }
 
-function showDialogue(i) {
-  if (i >= DIALOGUE.length) {
-    idx = DIALOGUE.length - 1;
-    showDialogue(idx);
+function frameLoop() {
+  if (frameTarget <= 0) {
+    rafId = null;
     return;
   }
-
-  const d = DIALOGUE[i];
-
-  bgEl.style.background = d.bg || BG.FOREST;
-
-  if (d.argue) {
-    bgEl.classList.add('argue-flash');
-    setTimeout(() => bgEl.classList.remove('argue-flash'), 400);
+  frameCount++;
+  if (frameCount >= frameTarget) {
+    frameCount = 0;
+    frameTarget = 0;
+    rafId = null;
+    next();
+    return;
   }
+  rafId = requestAnimationFrame(frameLoop);
+}
+
+function applyDialogue(d) {
+  bgEl.style.background = d.bg || BG.FOREST;
 
   if (d.bg === BG.WHITE_SPACE) {
     audio.playBGM('white');
@@ -135,6 +139,12 @@ function showDialogue(i) {
   emotionEl.className = `emotion-${d.emotion || 'neutral'}`;
   emotionEl.textContent = (d.emotion || 'neutral').toUpperCase();
 
+  if (d.textColor) {
+    textEl.style.color = d.textColor;
+  } else {
+    textEl.style.color = '#fff';
+  }
+
   textEl.textContent = '';
   textEl.classList.remove('typewriter');
   void textEl.offsetWidth;
@@ -165,9 +175,6 @@ function showDialogue(i) {
     textEl.style.transform = 'none';
     textEl.style.width = '100%';
     textEl.style.margin = '';
-    portraitWrap.style.opacity = d.portrait ? '1' : '0';
-    namebox.style.display = d.speaker ? 'inline-block' : 'none';
-    emotionEl.style.display = '';
     document.getElementById('top-bar').style.display = '';
     document.getElementById('text').style.maxHeight = '150px';
     const bgmEl = document.getElementById('bgm');
@@ -186,16 +193,9 @@ function showDialogue(i) {
     portraitWrap.style.opacity = '0';
     namebox.style.display = 'none';
     emotionEl.style.display = 'none';
-    frameCount = 0;
-    frameTarget = 120;
-    if (!rafId) {
-      rafId = requestAnimationFrame(frameLoop);
-    }
   } else {
     imageSlideEl.style.display = 'none';
     textEl.style.display = 'block';
-    frameCount = 0;
-    frameTarget = 0;
   }
 
   if (d.shake) {
@@ -227,6 +227,27 @@ function showDialogue(i) {
   }
 }
 
+function showDialogue(i) {
+  if (i >= DIALOGUE.length) {
+    idx = DIALOGUE.length - 1;
+    showDialogue(idx);
+    return;
+  }
+
+  const d = DIALOGUE[i];
+
+  if (d.fade) {
+    sceneEl.classList.add('scene-fade-out');
+    setTimeout(() => {
+      sceneEl.classList.remove('scene-fade-out');
+      applyDialogue(d);
+    }, 1000);
+    return;
+  }
+
+  applyDialogue(d);
+}
+
 function next() {
   const d = DIALOGUE[idx];
   stopTyping();
@@ -241,22 +262,6 @@ function next() {
 
   idx++;
   showDialogue(idx);
-}
-
-function frameLoop() {
-  if (frameTarget <= 0) {
-    rafId = null;
-    return;
-  }
-  frameCount++;
-  if (frameCount >= frameTarget) {
-    frameCount = 0;
-    frameTarget = 0;
-    rafId = null;
-    next();
-    return;
-  }
-  rafId = requestAnimationFrame(frameLoop);
 }
 
 function initGame() {

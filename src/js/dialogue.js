@@ -146,7 +146,8 @@ const DIALOGUE = [
     emotion: 'angry',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
-    friendship: -2
+    friendship: -2,
+    textColor: 'red'
   },
   {
     speaker: null,
@@ -263,7 +264,8 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.WHITE_SPACE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    fade: true
   },
   {
     speaker: null,
@@ -319,7 +321,8 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.WHITE_SPACE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    fade: true
   },
   {
     speaker: null,
@@ -335,7 +338,8 @@ const DIALOGUE = [
     emotion: 'neutral',
     bg: BG.FARAWAY_TOWN,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    fade: true
   },
   {
     speaker: 'HERO',

@@ -29,6 +29,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1s ease-in-out;
+}
+
+#scene.scene-fade-out {
+  opacity: 0;
 }
 
 #bg {
@@ -36,7 +41,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  transition: background 1s;
+  transition: background 1s ease-in-out;
   z-index: 1;
 }
 
