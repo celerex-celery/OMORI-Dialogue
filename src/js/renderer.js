@@ -134,7 +134,10 @@ function showDialogue(i) {
   playTextSfx();
 
   if (d.choices) {
-    showChoices(d.choices);
+    typeText(d.text, () => {
+      continueEl.style.opacity = '0';
+      showChoices(d.choices);
+    });
   } else {
     choicesEl.innerHTML = '';
     typeText(d.text, () => {
