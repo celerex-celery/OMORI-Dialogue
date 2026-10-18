@@ -3,6 +3,7 @@ let typeInterval = null;
 let frameCount = 0;
 let frameTarget = 0;
 let rafId = null;
+let clams = 0;
 
 const bgEl = document.getElementById('bg');
 const sceneEl = document.getElementById('scene');
@@ -10,6 +11,7 @@ const portraitImg = document.getElementById('portrait-img');
 const portraitWrap = document.getElementById('portrait');
 const namebox = document.getElementById('namebox');
 const friendshipEl = document.getElementById('friendship');
+const clamsEl = document.getElementById('clams');
 const textEl = document.getElementById('text');
 const emotionEl = document.getElementById('emotion');
 const continueEl = document.getElementById('continue');
@@ -26,6 +28,12 @@ function updateFriendship(change) {
   friendship += change;
   if (friendship < 0) friendship = 0;
   friendshipEl.textContent = 'FRIENDSHIP: ' + friendship;
+}
+
+function updateClams(change) {
+  clams += change;
+  if (clams < 0) clams = 0;
+  clamsEl.textContent = 'CLAMS: ' + clams;
 }
 
 function stopTyping() {
@@ -217,6 +225,10 @@ function applyDialogue(d) {
     updateFriendship(d.friendship);
   }
 
+  if (d.clams !== undefined) {
+    updateClams(d.clams);
+  }
+
   playTextSfx();
 
   if (d.choices) {
@@ -305,6 +317,7 @@ function initGame() {
   restartBtn.addEventListener('click', () => {
     idx = 0;
     friendship = 0;
+    clams = 0;
     endScreen.style.display = 'none';
     showDialogue(0);
   });

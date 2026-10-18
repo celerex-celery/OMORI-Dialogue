@@ -52,6 +52,12 @@ const PORTRAITS = {
     sad: '../assets/images/portraits/NOSE/NOSE.png',
     angry: '../assets/images/portraits/NOSE/NOSE.png'
   },
+  SNAKE: {
+    neutral: '../assets/images/portraits/SNAKE/SNAKE.png',
+    happy: '../assets/images/portraits/SNAKE/SNAKE.png',
+    sad: '../assets/images/portraits/SNAKE/SNAKE.png',
+    angry: '../assets/images/portraits/SNAKE/SNAKE.png'
+  },
   BERLY: {
     neutral: '../assets/images/portraits/BERLY/BERLY.png',
     happy: '../assets/images/portraits/BERLY/BERLY.png',
@@ -82,15 +88,116 @@ const BGM_LIST = [
 const TEXT_SFX_PATH = '../assets/audio/se/SYS_text.ogg';
 
 let friendship = 0;
+let clams = 0;
 
 const DIALOGUE = [
+  {
+    speaker: null,
+    text: "OMORI wakes up in White Space.",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    fade: true
+  },
+  {
+    speaker: null,
+    text: "OMORI talks to MEWO",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'MEWO',
+    text: "MEOW (Waiting for something to happen?)",
+    emotion: 'neutral',
+    bg: BG.WHITE_SPACE,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "OMORI enters a white door.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0,
+    fade: true
+  },
+  {
+    speaker: 'HERO',
+    text: "Omori! You're here!",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'KEL',
+    text: "Hey OMORI!",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.KEL,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "OMORI. DUMB KEL STOLE MY STUFFED TOY. CAN YOU FIND IT FOR ME PLEASE",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: null,
+    text: "OMORI finds the stuffed toy.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'KEL',
+    text: "I didn't steal anything!",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "You totally did!",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'SNAKE',
+    text: "SSSSSSSsssssss. (going out, OMORI?)",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.SNAKE,
+    friendship: 0
+  },
+  {
+    speaker: 'SNAKE',
+    text: "SSSSSSSsssssss (Heres 200 CLAMS)",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.SNAKE,
+    friendship: 0,
+    clams: +200
+  },
   {
     speaker: null,
     text: "Something feels wrong. But you can't remember what.",
     emotion: 'neutral',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BLANK,
-    friendship: 0
+    friendship: 0,
+    textColor: 'red'
   },
   {
     speaker: 'KEL',
@@ -110,7 +217,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'KEL',
-    text: "BASIL! Why is your house shaped like a shoe?",
+    text: "HEY BASIL! Why is your house shaped like a shoe?",
     emotion: 'happy',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.KEL,
@@ -134,7 +241,7 @@ const DIALOGUE = [
   },
   {
     speaker: 'BASIL',
-    text: "Well.. I guess you're right.",
+    text: "Hmph. W-Well... I guess you're right.",
     emotion: 'sad',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
@@ -150,11 +257,11 @@ const DIALOGUE = [
   },
   {
     speaker: 'BASIL',
-    text: "Hey, wanna see my photo collecti...",
+    text: "Hey, wanna see my photo collection...",
     emotion: 'sad',
     bg: BG.SHOE_HOUSE,
     portrait: PORTRAITS.BASIL,
-    friendship: +1
+    friendship: +2
   },
   {
     speaker: 'BASIL',
@@ -509,8 +616,8 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 50 },
-      { text: "Go back to the picnic", next: 52 }
+      { text: "Go up ladder", next: 60 },
+      { text: "Go back to the picnic", next: 62 }
     ]
   },
   {
@@ -521,7 +628,7 @@ const DIALOGUE = [
     portrait: PORTRAITS.BLANK,
     friendship: 0,
     choices: [
-      { text: "Go up ladder", next: 51 },
+      { text: "Go up ladder", next: 61 }
     ]
   },
   {
