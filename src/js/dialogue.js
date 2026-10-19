@@ -68,11 +68,37 @@ const PORTRAITS = {
 };
 
 const BG = {
+  FOREST: '../assets/images/backgrounds/FOREST.png',
+  WHITE: '../assets/images/backgrounds/WHITE.png',
+  KITCHEN: '../assets/images/backgrounds/KITCHEN.png',
+  VOID: '../assets/images/backgrounds/VOID.png',
+  BASIL_HOUSE: '../assets/images/backgrounds/BASIL_HOUSE.png',
+  WHITE_SPACE: '../assets/images/backgrounds/WHITE_SPACE.png',
+  FARAWAY_TOWN: '../assets/images/backgrounds/FARAWAY_TOWN.png',
+  PICNIC: '../assets/images/backgrounds/PICNIC.png',
+  VAST_FOREST: '../assets/images/backgrounds/VAST_FOREST.png',
+  LAKE: '../assets/images/backgrounds/LAKE.png',
+  BOATHOUSE: '../assets/images/backgrounds/BOATHOUSE.png',
+  PLAYGROUND: '../assets/images/backgrounds/PLAYGROUND.png',
+  STUMP: '../assets/images/backgrounds/STUMP.png',
+  LOST_LIBRARY: '../assets/images/backgrounds/LOST_LIBRARY.png',
+  ABANDONED_HOUSE: '../assets/images/backgrounds/ABANDONED_HOUSE.png',
+  SUNNY_FARM: '../assets/images/backgrounds/SUNNY_FARM.png',
+  ORANGE_OASIS: '../assets/images/backgrounds/ORANGE_OASIS.png',
+  SWEETHEART_CASTLE: '../assets/images/backgrounds/SWEETHEART_CASTLE.png',
+  PYREFLY_FOREST: '../assets/images/backgrounds/PYREFLY_FOREST.png',
+  BLACK_SPACE: '../assets/images/backgrounds/BLACK_SPACE.png',
+  LAST_RESORT: '../assets/images/backgrounds/LAST_RESORT.png',
+  HUMPHREY: '../assets/images/backgrounds/HUMPHREY.png',
+  HEADSPACE: '../assets/images/backgrounds/HEADSPACE.png'
+};
+
+const BG_FALLBACK = {
   FOREST: 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)',
   WHITE: 'radial-gradient(circle at center, #ffffff 0%, #e0e0e0 40%, #c0c0c0 100%)',
   KITCHEN: 'linear-gradient(#f5e6d3 0%, #e8d5c0 100%)',
   VOID: 'radial-gradient(circle at center, #1a1a1a 0%, #000000 100%)',
-  SHOE_HOUSE: 'linear-gradient(#8b4513 0%, #5d2e1c 100%)',
+  BASIL_HOUSE: 'linear-gradient(#8b4513 0%, #5d2e1c 100%)',
   WHITE_SPACE: 'radial-gradient(circle at center, #ffffff 0%, #e0e0e0 40%, #c0c0c0 100%)',
   FARAWAY_TOWN: 'linear-gradient(#4a6fa5 0%, #2c3e50 100%)',
   PICNIC: 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)',
@@ -81,7 +107,6 @@ const BG = {
   BOATHOUSE: 'linear-gradient(#3d2a1a 0%, #1a100a 100%)',
   PLAYGROUND: 'linear-gradient(#5a4a2d 0%, #3a2e1a 100%)',
   STUMP: 'linear-gradient(#3d5a2d 0%, #2a3a1a 100%)',
-  BASIL_HOUSE: 'linear-gradient(#5a3d4a 0%, #3a1a2a 100%)',
   LOST_LIBRARY: 'linear-gradient(#1a1a2e 0%, #0a0a1a 100%)',
   ABANDONED_HOUSE: 'linear-gradient(#2a1a1a 0%, #1a0a0a 100%)',
   SUNNY_FARM: 'linear-gradient(#6a8a2d 0%, #4a5a1a 100%)',

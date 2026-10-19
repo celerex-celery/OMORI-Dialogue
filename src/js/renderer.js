@@ -293,7 +293,22 @@ function frameLoop() {
 
 function applyDialogue(d, dialogueIdx = idx) {
   try {
-    bgEl.style.background = d.bg || BG.FOREST;
+    const bgValue = d.bg || BG.FOREST;
+    if (bgValue.startsWith('../assets/')) {
+      // Extract location name from path for fallback
+      const locationName = bgValue.match(/backgrounds\/([^.]+)/)?.[1] || 'FOREST';
+      const fallback = BG_FALLBACK[locationName] || BG_FALLBACK.FOREST;
+      
+      bgEl.style.backgroundImage = `url('${bgValue}')`;
+      bgEl.style.backgroundSize = 'cover';
+      bgEl.style.backgroundPosition = 'center';
+      bgEl.style.backgroundRepeat = 'no-repeat';
+      bgEl.style.backgroundColor = 'transparent';
+      bgEl.style.background = `url('${bgValue}'), ${fallback}`;
+    } else {
+      bgEl.style.background = bgValue;
+      bgEl.style.backgroundImage = 'none';
+    }
 
     if (d.bg === BG.WHITE_SPACE) {
       audio.playBGM('white');
@@ -351,6 +366,7 @@ function applyDialogue(d, dialogueIdx = idx) {
 
     if (d.blackScreen) {
       bgEl.style.background = '#000000';
+      bgEl.style.backgroundImage = 'none';
       bgEl.style.transition = 'none';
       textEl.style.display = 'block';
       textEl.style.textAlign = 'center';
@@ -373,7 +389,7 @@ function applyDialogue(d, dialogueIdx = idx) {
       textEl.style.transform = 'none';
       textEl.style.width = '100%';
       textEl.style.margin = '';
-      bgEl.style.transition = 'background 1s ease-in-out';
+      bgEl.style.transition = 'background-image 1s ease-in-out, background 1s ease-in-out';
       document.getElementById('top-bar').style.display = '';
       document.getElementById('text').style.maxHeight = '150px';
       const bgmEl = document.getElementById('bgm');
