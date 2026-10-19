@@ -173,6 +173,127 @@ const DIALOGUE = [
     friendship: -1
   },
   {
+    speaker: 'HERO',
+    text: "Now, now. Let's all calm down. Aubrey, Kel... there's no need to fight.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "Hmph! Fine. But if my stuffed toy is missing, I'm blaming Kel.",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'KEL',
+    text: "Why does it always have to be MY fault?! I didn't even touch your dumb toy!",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
+  },
+  {
+    speaker: 'HERO',
+    text: "Omori, could you help Aubrey look for it? It might be somewhere nearby.",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "You search around Faraway Town. The toy isn't in the playground, or by the fountain, or near the stump where you all used to sit.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "Finally, you spot something pink caught on a low branch of the big tree in the center of town.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'OMORI',
+    text: "...",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.OMORI,
+    friendship: 0
+  },
+  {
+    speaker: null,
+    text: "You climb up and retrieve the stuffed toy. It's a little dirty, but otherwise fine.",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
+    speaker: 'AUBREY',
+    text: "You found it! My Mr. Plantegg!",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: +2
+  },
+  {
+    speaker: 'KEL',
+    text: "Mr. Plantegg...? That's the stupidest name I've ever heard.",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.KEL,
+    friendship: -1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "IT'S NOT STUPID! HE'S A PLANT AND AN EGG! IT MAKES PERFECT SENSE!",
+    emotion: 'angry',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: -1
+  },
+  {
+    speaker: 'HERO',
+    text: "It's a very creative name, Aubrey. I like it.",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.HERO,
+    friendship: +1
+  },
+  {
+    speaker: 'AUBREY',
+    text: "See? Hero gets it. Thanks, Omori. Here, take this.",
+    emotion: 'happy',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.AUBREY,
+    friendship: +1,
+    item: 'STICKER'
+  },
+  {
+    speaker: null,
+    text: "You received a STICKER!",
+    emotion: 'neutral',
+    bg: BG.FARAWAY_TOWN,
+    portrait: PORTRAITS.BLANK,
+    friendship: 0
+  },
+  {
     speaker: 'SNAKE',
     text: "SSSSSSSsssssss. (going out, OMORI?)",
     emotion: 'neutral',
