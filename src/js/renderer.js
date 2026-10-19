@@ -7,6 +7,9 @@ let clams = 0;
 let history = [];
 let visitedRewards = new Set();
 let achievements = new Set();
+let inventory = new Set();
+let skills = ['ATTACK', 'GUARD', 'RUN', 'ITEM'];
+let menuOpen = false;
 
 const bgEl = document.getElementById('bg');
 const sceneEl = document.getElementById('scene');
@@ -33,6 +36,13 @@ achBtn.textContent = 'ACHIEVEMENTS: 0/0';
 achBtn.onclick = toggleAchievementMenu;
 achBtn.style.cssText = 'margin-top:20px;padding:14px 20px;background:#2a2a2a;border:4px solid #ffd700;color:#ffd700;font-family:inherit;font-size:18px;font-weight:bold;cursor:pointer;border-radius:8px;min-width:280px;';
 document.getElementById('top-bar').appendChild(achBtn);
+
+const menuBtn = document.createElement('button');
+menuBtn.id = 'menu-btn';
+menuBtn.textContent = 'MENU';
+menuBtn.onclick = toggleMainMenu;
+menuBtn.style.cssText = 'margin-top:20px;padding:14px 20px;background:#2a2a2a;border:4px solid #ff80ab;color:#ff80ab;font-family:inherit;font-size:18px;font-weight:bold;cursor:pointer;border-radius:8px;min-width:140px;';
+document.getElementById('top-bar').appendChild(menuBtn);
 
 function coloredText(d) {
   let t = d.text;
@@ -127,6 +137,41 @@ function checkAchievements() {
   if (idx >= DIALOGUE.length - 1) unlockAchievement('completionist');
 }
 
+function addToInventory(item) {
+  if (!inventory.has(item)) {
+    inventory.add(item);
+    showItemToast(item);
+    saveInventory();
+  }
+}
+
+function showItemToast(item) {
+  const toast = document.createElement('div');
+  toast.className = 'item-toast';
+  toast.innerHTML = `<strong>ITEM OBTAINED</strong><br>${item}`;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 50);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 500);
+  }, 3000);
+}
+
+function saveInventory() {
+  try {
+    localStorage.setItem('omori_inventory', JSON.stringify([...inventory]));
+  } catch (e) {}
+}
+
+function loadInventory() {
+  try {
+    const saved = localStorage.getItem('omori_inventory');
+    if (saved) {
+      inventory = new Set(JSON.parse(saved));
+    }
+  } catch (e) {}
+}
+
 function toggleAchievementMenu() {
   let menu = document.getElementById('ach-menu');
   if (menu) { menu.remove(); return; }
@@ -140,6 +185,39 @@ function toggleAchievementMenu() {
     </div>`;
   }).join('') + '<button onclick="toggleAchievementMenu()">CLOSE</button>';
   document.body.appendChild(menu);
+}
+
+function toggleMainMenu() {
+  let menu = document.getElementById('main-menu');
+  if (menu) { menu.remove(); menuOpen = false; return; }
+  menuOpen = true;
+  menu = document.createElement('div');
+  menu.id = 'main-menu';
+  menu.innerHTML = `
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-tab="skills">SKILLS</button>
+      <button class="menu-tab" data-tab="inventory">INVENTORY</button>
+    </div>
+    <div class="menu-content">
+      <div class="menu-panel" id="skills-panel">
+        ${skills.map(s => `<div class="skill-item">${s}</div>`).join('')}
+      </div>
+      <div class="menu-panel hidden" id="inventory-panel">
+        ${inventory.size > 0 ? Array.from(inventory).map(item => `<div class="inventory-item">${item}</div>`).join('') : '<div class="inventory-empty">(Empty)</div>'}
+      </div>
+    </div>
+    <button onclick="toggleMainMenu()">CLOSE</button>
+  `;
+  document.body.appendChild(menu);
+  
+  menu.querySelectorAll('.menu-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      menu.querySelectorAll('.menu-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      menu.querySelectorAll('.menu-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(btn.dataset.tab + '-panel').classList.remove('hidden');
+    });
+  });
 }
 
 function stopTyping() {
@@ -345,6 +423,10 @@ function applyDialogue(d, dialogueIdx = idx) {
       if (d.clams !== undefined) {
         updateClams(d.clams);
       }
+
+      if (d.item) {
+        addToInventory(d.item);
+      }
       visitedRewards.add(dialogueIdx);
     }
 
@@ -460,6 +542,7 @@ function prev() {
 
 function initGame() {
   loadAchievements();
+  loadInventory();
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       if (choicesEl && choicesEl.children.length > 0) return;
