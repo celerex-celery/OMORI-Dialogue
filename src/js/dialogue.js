@@ -76,7 +76,40 @@ const BG = {
   WHITE_SPACE: 'radial-gradient(circle at center, #ffffff 0%, #e0e0e0 40%, #c0c0c0 100%)',
   FARAWAY_TOWN: 'linear-gradient(#4a6fa5 0%, #2c3e50 100%)',
   PICNIC: 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)',
-  VAST_FOREST: 'linear-gradient(#1a2e1a 0%, #0d1a0d 100%)'
+  VAST_FOREST: 'linear-gradient(#1a2e1a 0%, #0d1a0d 100%)',
+  LAKE: 'linear-gradient(#1a5a8a 0%, #0d2e4a 100%)',
+  BOATHOUSE: 'linear-gradient(#3d2a1a 0%, #1a100a 100%)',
+  PLAYGROUND: 'linear-gradient(#5a4a2d 0%, #3a2e1a 100%)',
+  STUMP: 'linear-gradient(#3d5a2d 0%, #2a3a1a 100%)',
+  BASIL_HOUSE: 'linear-gradient(#5a3d4a 0%, #3a1a2a 100%)',
+  LOST_LIBRARY: 'linear-gradient(#1a1a2e 0%, #0a0a1a 100%)',
+  ABANDONED_HOUSE: 'linear-gradient(#2a1a1a 0%, #1a0a0a 100%)',
+  SUNNY_FARM: 'linear-gradient(#6a8a2d 0%, #4a5a1a 100%)',
+  ORANGE_OASIS: 'linear-gradient(#aa6a2d 0%, #7a4a1a 100%)',
+  SWEETHEART_CASTLE: 'linear-gradient(#8a2d5a 0%, #5a1a3a 100%)',
+  PYREFLY_FOREST: 'linear-gradient(#1a3a3a 0%, #0a1a1a 100%)',
+  BLACK_SPACE: 'radial-gradient(circle at center, #0a0a0a 0%, #000000 100%)',
+  LAST_RESORT: 'linear-gradient(#1a1a2e 0%, #0a0a1a 100%)',
+  HUMPHREY: 'linear-gradient(#2a2a3e 0%, #1a1a2a 100%)',
+  HEADSPACE: 'linear-gradient(#3a5a7a 0%, #2a3a4a 100%)'
+};
+
+const BATTLE_BG = {
+  NORMAL: 'radial-gradient(ellipse at center, #2a2a2a 0%, #1a1a1a 50%, #0a0a0a 100%)',
+  BOSS: 'radial-gradient(ellipse at center, #3a1a1a 0%, #2a0a0a 50%, #1a0a0a 100%)',
+  MARI: 'radial-gradient(ellipse at center, #3a3a1a 0%, #2a2a0a 50%, #1a1a0a 100%)',
+  BASIL: 'radial-gradient(ellipse at center, #1a3a2a 0%, #0a2a1a 50%, #0a1a0a 100%)',
+  OMORI: 'radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 50%, #000000 100%)',
+  SWEETHEART: 'radial-gradient(ellipse at center, #3a1a3a 0%, #2a0a2a 50%, #1a0a1a 100%)',
+  HUMPHREY: 'radial-gradient(ellipse at center, #2a2a3a 0%, #1a1a2a 50%, #0a0a1a 100%)',
+  PLUTO: 'radial-gradient(ellipse at center, #1a1a3a 0%, #0a0a2a 50%, #0a0a1a 100%)',
+  SPROUT_MOLE: 'radial-gradient(ellipse at center, #2a3a1a 0%, #1a2a0a 50%, #0a1a0a 100%)',
+  LOST_SPROUT: 'radial-gradient(ellipse at center, #2a2a1a 0%, #1a1a0a 50%, #0a0a0a 100%)',
+  HAPPY: 'radial-gradient(ellipse at center, #3a2a1a 0%, #2a1a0a 50%, #1a0a0a 100%)',
+  ANGRY: 'radial-gradient(ellipse at center, #3a0a0a 0%, #2a0a0a 50%, #1a0a0a 100%)',
+  SAD: 'radial-gradient(ellipse at center, #0a1a3a 0%, #0a0a2a 50%, #0a0a1a 100%)',
+  NEUTRAL: 'radial-gradient(ellipse at center, #2a2a2a 0%, #1a1a1a 50%, #0a0a0a 100%)',
+  UNUSED: 'radial-gradient(ellipse at center, #1a2a3a 0%, #0a1a2a 50%, #0a0a1a 100%)'
 };
 
 const BGM_LIST = [
