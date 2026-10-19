@@ -2,7 +2,7 @@
   "name": "omori-dialogue",
   "version": "1.0.0",
   "description": "Omori-style psychological dialogue game",
-  "main": "electron/main.js",
+  "main": "main.js",
   "scripts": {
     "electron": "electron .",
     "start": "electron .",

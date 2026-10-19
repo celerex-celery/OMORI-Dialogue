@@ -295,19 +295,13 @@ function applyDialogue(d, dialogueIdx = idx) {
   try {
     const bgValue = d.bg || BG.FOREST;
     if (bgValue.startsWith('../assets/')) {
-      // Extract location name from path for fallback
-      const locationName = bgValue.match(/backgrounds\/([^.]+)/)?.[1] || 'FOREST';
-      const fallback = BG_FALLBACK[locationName] || BG_FALLBACK.FOREST;
-      
-      bgEl.style.backgroundImage = `url('${bgValue}')`;
+      const fallback = BG_FALLBACK[bgValue] || 'linear-gradient(#2d5a27 0%, #1a3a1a 100%)';
+      bgEl.style.background = `url('${bgValue}'), ${fallback}`;
       bgEl.style.backgroundSize = 'cover';
       bgEl.style.backgroundPosition = 'center';
       bgEl.style.backgroundRepeat = 'no-repeat';
-      bgEl.style.backgroundColor = 'transparent';
-      bgEl.style.background = `url('${bgValue}'), ${fallback}`;
     } else {
       bgEl.style.background = bgValue;
-      bgEl.style.backgroundImage = 'none';
     }
 
     if (d.bg === BG.WHITE_SPACE) {
